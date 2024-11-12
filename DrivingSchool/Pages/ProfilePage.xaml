@@ -21,17 +21,31 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="2"  Grid.RowSpan="3" Margin="66,73,364,68">
-            <ui:Image Source="/png/ava.png" Height="174" Width="176" HorizontalAlignment="Center"/>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+            <ui:Image Source="/png/ava.png" Height="174" Width="176" HorizontalAlignment="Left"/>
+            <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
                 <ui:TextBlock Text="Фамилия:" Foreground="White" FontSize="20" VerticalAlignment="Center" Height="30"/>
-                <ui:TextBlock x:Name="txtFName" FontSize="20" TextWrapping="Wrap" Text="" Margin="70,0,0,0"  Height="30" Width="95" Foreground="White"/>
+                <ui:TextBlock x:Name="txtFName" FontSize="20" TextWrapping="Wrap" Text="" Margin="90,0,0,0"  Height="30" Width="95" Foreground="White"/>
             </StackPanel>
-            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtLName" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="34" Width="95"/>
-            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateBirth" FontSize="20" TextWrapping="Wrap" Margin="0,20,0,0" Text="" Height="30" Width="130" Foreground="White"/>
-            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateStart" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="30" Width="100"/>
-            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateEnd" FontSize="20" TextWrapping="Wrap" Margin="0,20,0,0" Text="" Height="30" Width="130" Foreground="White"/>
-            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtCategory" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="34" Width="95"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Имя:" Foreground="White" FontSize="20" VerticalAlignment="Center" Height="30"/>
+                <ui:TextBlock x:Name="txtLName" Text="" Foreground="White" FontSize="20" Margin="134,0,0,0" Height="30" Width="95"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Дата рождения:" Foreground="White" FontSize="20" Height="30"/>
+                <ui:TextBlock x:Name="txtDateBirth" FontSize="20" TextWrapping="Wrap" Margin="32,0,0,0" Text="" Height="30" Width="130" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Дата начала:" Foreground="White" FontSize="20" Height="30"/>
+                <ui:TextBlock x:Name="txtDateStart" Text="" Foreground="White" Margin="62,0,0,0" FontSize="20" Height="30" Width="100"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Дата окончания:" Foreground="White" FontSize="20" Height="30"/>
+                <ui:TextBlock x:Name="txtDateEnd" FontSize="20" TextWrapping="Wrap" Text="" Margin="26,0,0,0" Height="30" Width="130" Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Категория:" Foreground="White" FontSize="20" Height="30"/>
+                <ui:TextBlock x:Name="txtCategory" Text="" Margin="82,0,0,0" Foreground="White" FontSize="20" Height="34" Width="95" RenderTransformOrigin="0.522,0.629"/>
+            </StackPanel>
         </StackPanel>
-
     </Grid>
 </Page>
