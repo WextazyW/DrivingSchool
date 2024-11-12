@@ -1,0 +1,37 @@
+﻿<Page x:Class="DrivingSchool.Pages.GradesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="GradesPage">
+
+    <Grid Background="#0E2039">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="GradesList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Grid.ColumnSpan="3" Margin="0,0,0,10" Grid.RowSpan="3">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding GradeID}" Width="40" Header="id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="80" Header="Студент"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding CourseID}" Width="70" Header="Курс"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TheoreticalExamScore}" Width="140" Header="Теория"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding PracticalExamScore}" Width="140" Header="Практика"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding OverallGrade}" Width="140" Header="Категория"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Сформировать отчет" Margin="84,38,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="174" Click="Button_Click"/>
+
+    </Grid>
+</Page>

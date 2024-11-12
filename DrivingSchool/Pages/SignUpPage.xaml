@@ -1,0 +1,45 @@
+﻿<Page xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"  
+      x:Class="DrivingSchool.Pages.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="SignUpPage">
+
+    <Grid Background="#0E2039">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="341*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="91,-9,377,0" Grid.RowSpan="4" Grid.ColumnSpan="2">
+            <ui:TextBlock Text="Логин" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtLogin" CaretBrush="Gray" Margin="0,10,0,0" />
+            <ui:TextBlock Text="Пароль" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:PasswordBox FontSize="20px" x:Name="txtPassword" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Фамилия" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtfName" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Имя" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtlName" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Дата рождения" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtdateOfBirth" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Дата начала" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtstartDate" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Дата окончания" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtendDate" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Категория" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtcategory" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:Button Content="Зарегистрироваться" FontSize="16px" x:Name="ButtonLogIn" Click="ButtonLogIn_Click" Background="White" Height="46" Margin="0,20,0,0" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <ui:Image Source="/png/regis.png" Grid.Column="1" Grid.ColumnSpan="2" Margin="300,68,72,142" Grid.RowSpan="4"/>
+    </Grid>
+</Page>

@@ -1,0 +1,37 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.ProfilePage"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="ProfilePage">
+
+    <Grid Background="#0E2039">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2"  Grid.RowSpan="3" Margin="66,73,364,68">
+            <ui:Image Source="/png/ava.png" Height="174" Width="176" HorizontalAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                <ui:TextBlock Text="Фамилия:" Foreground="White" FontSize="20" VerticalAlignment="Center" Height="30"/>
+                <ui:TextBlock x:Name="txtFName" FontSize="20" TextWrapping="Wrap" Text="" Margin="70,0,0,0"  Height="30" Width="95" Foreground="White"/>
+            </StackPanel>
+            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtLName" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="34" Width="95"/>
+            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateBirth" FontSize="20" TextWrapping="Wrap" Margin="0,20,0,0" Text="" Height="30" Width="130" Foreground="White"/>
+            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateStart" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="30" Width="100"/>
+            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtDateEnd" FontSize="20" TextWrapping="Wrap" Margin="0,20,0,0" Text="" Height="30" Width="130" Foreground="White"/>
+            <ui:TextBlock HorizontalAlignment="Left" x:Name="txtCategory" Text="" Foreground="White" Margin="0,20,0,0" FontSize="20" Height="34" Width="95"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

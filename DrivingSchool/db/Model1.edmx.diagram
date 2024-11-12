@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e604b9e2d7c42d5a6e5dc83c245cf5a" Name="Diagram1">
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Absences" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Courses" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Discounts" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.DrivingCategories" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Feedback" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Grades" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Instructors" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.MaintenanceHistory" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Notifications" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Payments" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Reports" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Schedule" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Students" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.users" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Vehicles" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Absences__Schedu__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Absences__Studen__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Feedback__Course__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Grades__CourseID__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Payments__Course__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Schedule__Course__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Feedback__Instru__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Feedback__Studen__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Grades__StudentI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Schedule__Instru__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Notificat__Stude__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK_Students_users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
