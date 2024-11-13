@@ -17,11 +17,11 @@ namespace DrivingSchool.db
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Students()
         {
-            this.Absences = new HashSet<Absences>();
             this.Feedback = new HashSet<Feedback>();
             this.Grades = new HashSet<Grades>();
             this.Notifications = new HashSet<Notifications>();
             this.Payments = new HashSet<Payments>();
+            this.Schedule = new HashSet<Schedule>();
         }
     
         public int StudentID { get; set; }
@@ -36,8 +36,6 @@ namespace DrivingSchool.db
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Absences> Absences { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedback { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Grades> Grades { get; set; }
@@ -45,6 +43,8 @@ namespace DrivingSchool.db
         public virtual ICollection<Notifications> Notifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Payments> Payments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Schedule> Schedule { get; set; }
         public virtual users users { get; set; }
     }
 }

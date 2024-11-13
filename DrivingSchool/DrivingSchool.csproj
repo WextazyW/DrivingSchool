@@ -79,9 +79,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="db\Absences.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="db\ConnectionDB.cs" />
     <Compile Include="db\Courses.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -147,7 +144,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddSchedulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\GradesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LIstOfReports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,8 +178,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddSchedulePage.xaml.cs">
+      <DependentUpon>AddSchedulePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\GradesPage.xaml.cs">
       <DependentUpon>GradesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LIstOfReports.xaml.cs">
+      <DependentUpon>LIstOfReports.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListStudentPage.xaml.cs">
       <DependentUpon>ListStudentPage.xaml</DependentUpon>
@@ -239,6 +250,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="png\schedule.png" />
+    <Resource Include="png\grades.png" />
+    <Resource Include="png\students.png" />
     <Resource Include="png\regis.png" />
     <Resource Include="png\bmw m5f90.png" />
     <Resource Include="png\ava.png" />

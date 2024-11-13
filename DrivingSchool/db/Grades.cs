@@ -16,12 +16,11 @@ namespace DrivingSchool.db
     {
         public int GradeID { get; set; }
         public Nullable<int> StudentID { get; set; }
-        public Nullable<int> CourseID { get; set; }
+        public Nullable<int> AttendancePercentage { get; set; }
         public Nullable<int> TheoreticalExamScore { get; set; }
         public Nullable<int> PracticalExamScore { get; set; }
         public string OverallGrade { get; set; }
     
-        public virtual Courses Courses { get; set; }
         public virtual Students Students { get; set; }
     }
 }

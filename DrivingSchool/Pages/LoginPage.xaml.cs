@@ -36,9 +36,9 @@ namespace DrivingSchool.Pages
 
         private void ButtonLogIn_Click(object sender, RoutedEventArgs e)
         {
-            if (txtLogin.Text == "1" && txtPassword.Password == "1")
+            if (txtLogin.Text == "1" && txtPassword.Password == "1" && txtKey.Text == "1")
             {
-                _mainWindow.MainFrame.NavigationService.Navigate(new ListStudentPage());
+                _mainWindow.MainFrame.NavigationService.Navigate(new LIstOfReports());
             }
             else
             {
@@ -80,6 +80,11 @@ namespace DrivingSchool.Pages
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             _mainWindow.MainFrame.NavigationService.Navigate(new SignUpPage());
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            txtKey.Visibility = Visibility.Visible;
         }
     }
 }

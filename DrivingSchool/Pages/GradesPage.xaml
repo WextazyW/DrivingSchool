@@ -24,7 +24,7 @@
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding GradeID}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="80" Header="Студент"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding CourseID}" Width="70" Header="Курс"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding AttendancePercentage}" Width="100" Header="Посещаемость"/>
                     <GridViewColumn DisplayMemberBinding="{Binding TheoreticalExamScore}" Width="140" Header="Теория"/>
                     <GridViewColumn DisplayMemberBinding="{Binding PracticalExamScore}" Width="140" Header="Практика"/>
                     <GridViewColumn DisplayMemberBinding="{Binding OverallGrade}" Width="140" Header="Категория"/>

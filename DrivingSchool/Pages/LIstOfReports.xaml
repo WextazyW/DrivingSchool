@@ -1,0 +1,38 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.LIstOfReports"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="LIstOfReports">
+
+    <Grid Background="#0E2039">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="10,134,0,286" Grid.RowSpan="2">
+            <StackPanel Orientation="Vertical" Name="StudentsPage" Height="189" Width="225" VerticalAlignment="Top" MouseDown="StudentsPage_MouseDown">
+                <ui:Image Source="/png/students.png" Height="140" Width="225"/>
+                <ui:TextBlock Text="Студенты" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="20" Foreground="White" Grid.Row="1" Height="29" Width="95"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="GragesPage" Width="200" Margin="100,0,0,0" MouseDown="GragesPage_MouseDown">
+                <ui:Image Source="/png/grades.png" Width="176" Height="143"/>
+                <ui:TextBlock Text="Успеваемость" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="SchedulePage" Width="200" Margin="120,0,0,0" Height="207" MouseDown="SchedulePage_MouseDown">
+                <ui:Image Source="/png/schedule.png" Height="141"/>
+                <ui:TextBlock Text="Расписание" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

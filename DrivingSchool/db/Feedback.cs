@@ -17,12 +17,10 @@ namespace DrivingSchool.db
         public int FeedbackID { get; set; }
         public Nullable<int> StudentID { get; set; }
         public Nullable<int> InstructorID { get; set; }
-        public Nullable<int> CourseID { get; set; }
         public string Comments { get; set; }
         public Nullable<int> Rating { get; set; }
         public Nullable<System.DateTime> FeedbackDate { get; set; }
     
-        public virtual Courses Courses { get; set; }
         public virtual Instructors Instructors { get; set; }
         public virtual Students Students { get; set; }
     }

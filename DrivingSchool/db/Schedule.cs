@@ -14,22 +14,14 @@ namespace DrivingSchool.db
     
     public partial class Schedule
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Schedule()
-        {
-            this.Absences = new HashSet<Absences>();
-        }
-    
         public int ScheduleID { get; set; }
-        public Nullable<int> CourseID { get; set; }
+        public Nullable<int> StudentID { get; set; }
         public Nullable<int> InstructorID { get; set; }
         public Nullable<System.DateTime> StartTime { get; set; }
         public Nullable<System.DateTime> EndTime { get; set; }
         public string Status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Absences> Absences { get; set; }
-        public virtual Courses Courses { get; set; }
         public virtual Instructors Instructors { get; set; }
+        public virtual Students Students { get; set; }
     }
 }

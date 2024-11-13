@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DrivingSchool.db;
 
 namespace DrivingSchool.Pages
 {
@@ -23,6 +24,16 @@ namespace DrivingSchool.Pages
         public SchedulePage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ScheduleList.ItemsSource = ConnectionDB.db.Schedule.ToList();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddSchedulePage());
         }
     }
 }
