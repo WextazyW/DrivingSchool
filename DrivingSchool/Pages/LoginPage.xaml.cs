@@ -46,13 +46,14 @@ namespace DrivingSchool.Pages
                 string password = txtPassword.Password;
 
                 var student = ConnectionDB.db.Students.FirstOrDefault(log => log.login == login && log.password == password);
-    
+                var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
                 if (student == null)
                 {
                     MessageBox.Show("Неверный логин или пароль");
                     return;
                 }
                 ConnectionDB.students = student;
+                ConnectionDB.notifications = notification;
                 _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage());
             }
         }

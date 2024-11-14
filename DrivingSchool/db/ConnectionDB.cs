@@ -12,5 +12,6 @@ namespace DrivingSchool.db
         public static DrivingSchoolDBEntities1 db = new DrivingSchoolDBEntities1();
         public static users user;
         public static Students students;
+        public static Notifications notifications;
     }
 }

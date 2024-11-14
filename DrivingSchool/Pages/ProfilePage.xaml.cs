@@ -27,6 +27,7 @@ namespace DrivingSchool.Pages
             txtDateStart.Text = ConnectionDB.students.StartDate.ToString();
             txtDateEnd.Text = ConnectionDB.students.EndDate.ToString();
             txtCategory.Text = ConnectionDB.students.DrivingCategory.ToString();
+            txtNotification.Text = ConnectionDB.notifications.Message.ToString();
         }
     }
 }

@@ -35,5 +35,35 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new AddSchedulePage());
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (ScheduleList.SelectedItem != null)
+            {
+                Schedule schedule = ScheduleList.SelectedItem as Schedule;
+                if (cmbx.Text == "Студент")
+                {
+                    schedule.StudentID = int.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Инструктор")
+                {
+                    schedule.InstructorID = int.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Начало")
+                {
+                    schedule.StartTime = DateTime.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Конец")
+                {
+                    schedule.StartTime = DateTime.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Результат")
+                {
+                    schedule.Status = txtBox.Text;
+                }
+                ConnectionDB.db.SaveChanges();
+                ScheduleList.ItemsSource = ConnectionDB.db.Schedule.ToList();
+            }
+        }
     }
 }
