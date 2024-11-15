@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище DrivingSchoolDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cars">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LicensePlate" Type="nvarchar" MaxLength="20" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
+          <Property Name="InstructorID" Type="int" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -71,7 +82,7 @@
             <PropertyRef Name="MaintenanceID" />
           </Key>
           <Property Name="MaintenanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="VehicleID" Type="int" />
+          <Property Name="CarID" Type="int" />
           <Property Name="MaintenanceDate" Type="date" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="Cost" Type="decimal" Precision="10" Scale="2" />
@@ -150,17 +161,6 @@
           <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="Vehicles">
-          <Key>
-            <PropertyRef Name="VehicleID" />
-          </Key>
-          <Property Name="VehicleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LicensePlate" Type="nvarchar" MaxLength="20" />
-          <Property Name="Status" Type="nvarchar" MaxLength="20" />
-          <Property Name="InstructorID" Type="int" />
-          <Property Name="Model" Type="nvarchar" MaxLength="50" />
-          <Property Name="Year" Type="int" />
-        </EntityType>
         <Association Name="FK__Feedback__Instru__44FF419A">
           <End Role="Instructors" Type="Self.Instructors" Multiplicity="0..1" />
           <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
@@ -198,14 +198,14 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Maintenan__Vehic__49C3F6B7">
-          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="0..1" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="0..1" />
           <End Role="MaintenanceHistory" Type="Self.MaintenanceHistory" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Vehicles">
-              <PropertyRef Name="VehicleID" />
+            <Principal Role="Cars">
+              <PropertyRef Name="CarID" />
             </Principal>
             <Dependent Role="MaintenanceHistory">
-              <PropertyRef Name="VehicleID" />
+              <PropertyRef Name="CarID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -247,12 +247,12 @@
         </Association>
         <Association Name="FK__Vehicles__Instru__4F7CD00D">
           <End Role="Instructors" Type="Self.Instructors" Multiplicity="0..1" />
-          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <End Role="Cars" Type="Self.Cars" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Instructors">
               <PropertyRef Name="InstructorID" />
             </Principal>
-            <Dependent Role="Vehicles">
+            <Dependent Role="Cars">
               <PropertyRef Name="InstructorID" />
             </Dependent>
           </ReferentialConstraint>
@@ -282,6 +282,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище DrivingSchoolDBModelContainer">
+          <EntitySet Name="Cars" EntityType="Self.Cars" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discounts" EntityType="Self.Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrivingCategories" EntityType="Self.DrivingCategories" Schema="dbo" store:Type="Tables" />
@@ -296,7 +297,6 @@
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Feedback__Instru__44FF419A" Association="Self.FK__Feedback__Instru__44FF419A">
             <End Role="Instructors" EntitySet="Instructors" />
             <End Role="Feedback" EntitySet="Feedback" />
@@ -310,7 +310,7 @@
             <End Role="Grades" EntitySet="Grades" />
           </AssociationSet>
           <AssociationSet Name="FK__Maintenan__Vehic__49C3F6B7" Association="Self.FK__Maintenan__Vehic__49C3F6B7">
-            <End Role="Vehicles" EntitySet="Vehicles" />
+            <End Role="Cars" EntitySet="Cars" />
             <End Role="MaintenanceHistory" EntitySet="MaintenanceHistory" />
           </AssociationSet>
           <AssociationSet Name="FK__Notificat__Stude__45F365D3" Association="Self.FK__Notificat__Stude__45F365D3">
@@ -327,7 +327,7 @@
           </AssociationSet>
           <AssociationSet Name="FK__Vehicles__Instru__4F7CD00D" Association="Self.FK__Vehicles__Instru__4F7CD00D">
             <End Role="Instructors" EntitySet="Instructors" />
-            <End Role="Vehicles" EntitySet="Vehicles" />
+            <End Role="Cars" EntitySet="Cars" />
           </AssociationSet>
           <AssociationSet Name="FK_Schedule_Students" Association="Self.FK_Schedule_Students">
             <End Role="Students" EntitySet="Students" />
@@ -343,6 +343,7 @@
     <edmx:ConceptualModels>
       <Schema Namespace="DrivingSchoolDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="DrivingSchoolDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cars" EntityType="DrivingSchoolDBModel.Cars" />
           <EntitySet Name="Courses" EntityType="DrivingSchoolDBModel.Courses" />
           <EntitySet Name="Discounts" EntityType="DrivingSchoolDBModel.Discounts" />
           <EntitySet Name="DrivingCategories" EntityType="DrivingSchoolDBModel.DrivingCategories" />
@@ -357,7 +358,14 @@
           <EntitySet Name="Students" EntityType="DrivingSchoolDBModel.Students" />
           <EntitySet Name="sysdiagrams" EntityType="DrivingSchoolDBModel.sysdiagrams" />
           <EntitySet Name="users" EntityType="DrivingSchoolDBModel.users" />
-          <EntitySet Name="Vehicles" EntityType="DrivingSchoolDBModel.Vehicles" />
+          <AssociationSet Name="FK__Maintenan__Vehic__49C3F6B7" Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7">
+            <End Role="Cars" EntitySet="Cars" />
+            <End Role="MaintenanceHistory" EntitySet="MaintenanceHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__Instru__4F7CD00D" Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D">
+            <End Role="Instructors" EntitySet="Instructors" />
+            <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
           <AssociationSet Name="FK__Feedback__Instru__44FF419A" Association="DrivingSchoolDBModel.FK__Feedback__Instru__44FF419A">
             <End Role="Instructors" EntitySet="Instructors" />
             <End Role="Feedback" EntitySet="Feedback" />
@@ -373,14 +381,6 @@
           <AssociationSet Name="FK__Schedule__Instru__4E88ABD4" Association="DrivingSchoolDBModel.FK__Schedule__Instru__4E88ABD4">
             <End Role="Instructors" EntitySet="Instructors" />
             <End Role="Schedule" EntitySet="Schedule" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Vehicles__Instru__4F7CD00D" Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D">
-            <End Role="Instructors" EntitySet="Instructors" />
-            <End Role="Vehicles" EntitySet="Vehicles" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Maintenan__Vehic__49C3F6B7" Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7">
-            <End Role="Vehicles" EntitySet="Vehicles" />
-            <End Role="MaintenanceHistory" EntitySet="MaintenanceHistory" />
           </AssociationSet>
           <AssociationSet Name="FK__Notificat__Stude__45F365D3" Association="DrivingSchoolDBModel.FK__Notificat__Stude__45F365D3">
             <End Role="Students" EntitySet="Students" />
@@ -399,6 +399,19 @@
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Cars">
+          <Key>
+            <PropertyRef Name="CarID" />
+          </Key>
+          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LicensePlate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InstructorID" Type="Int32" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+          <NavigationProperty Name="MaintenanceHistory" Relationship="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" FromRole="Cars" ToRole="MaintenanceHistory" />
+          <NavigationProperty Name="Instructors" Relationship="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" FromRole="Cars" ToRole="Instructors" />
+        </EntityType>
         <EntityType Name="Courses">
           <Key>
             <PropertyRef Name="CourseID" />
@@ -462,20 +475,20 @@
           <Property Name="Rating" Type="Double" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cars" Relationship="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" FromRole="Instructors" ToRole="Cars" />
           <NavigationProperty Name="Feedback" Relationship="DrivingSchoolDBModel.FK__Feedback__Instru__44FF419A" FromRole="Instructors" ToRole="Feedback" />
           <NavigationProperty Name="Schedule" Relationship="DrivingSchoolDBModel.FK__Schedule__Instru__4E88ABD4" FromRole="Instructors" ToRole="Schedule" />
-          <NavigationProperty Name="Vehicles" Relationship="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" FromRole="Instructors" ToRole="Vehicles" />
         </EntityType>
         <EntityType Name="MaintenanceHistory">
           <Key>
             <PropertyRef Name="MaintenanceID" />
           </Key>
           <Property Name="MaintenanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="CarID" Type="Int32" />
           <Property Name="MaintenanceDate" Type="DateTime" Precision="0" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Cost" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Vehicles" Relationship="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" FromRole="MaintenanceHistory" ToRole="Vehicles" />
+          <NavigationProperty Name="Cars" Relationship="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" FromRole="MaintenanceHistory" ToRole="Cars" />
         </EntityType>
         <EntityType Name="Notifications">
           <Key>
@@ -562,19 +575,30 @@
           <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Students" Relationship="DrivingSchoolDBModel.FK_Students_users" FromRole="users" ToRole="Students" />
         </EntityType>
-        <EntityType Name="Vehicles">
-          <Key>
-            <PropertyRef Name="VehicleID" />
-          </Key>
-          <Property Name="VehicleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LicensePlate" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="InstructorID" Type="Int32" />
-          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Year" Type="Int32" />
-          <NavigationProperty Name="Instructors" Relationship="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" FromRole="Vehicles" ToRole="Instructors" />
-          <NavigationProperty Name="MaintenanceHistory" Relationship="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" FromRole="Vehicles" ToRole="MaintenanceHistory" />
-        </EntityType>
+        <Association Name="FK__Maintenan__Vehic__49C3F6B7">
+          <End Type="DrivingSchoolDBModel.Cars" Role="Cars" Multiplicity="0..1" />
+          <End Type="DrivingSchoolDBModel.MaintenanceHistory" Role="MaintenanceHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cars">
+              <PropertyRef Name="CarID" />
+            </Principal>
+            <Dependent Role="MaintenanceHistory">
+              <PropertyRef Name="CarID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__Instru__4F7CD00D">
+          <End Type="DrivingSchoolDBModel.Instructors" Role="Instructors" Multiplicity="0..1" />
+          <End Type="DrivingSchoolDBModel.Cars" Role="Cars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instructors">
+              <PropertyRef Name="InstructorID" />
+            </Principal>
+            <Dependent Role="Cars">
+              <PropertyRef Name="InstructorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Feedback__Instru__44FF419A">
           <End Type="DrivingSchoolDBModel.Instructors" Role="Instructors" Multiplicity="0..1" />
           <End Type="DrivingSchoolDBModel.Feedback" Role="Feedback" Multiplicity="*" />
@@ -620,30 +644,6 @@
             </Principal>
             <Dependent Role="Schedule">
               <PropertyRef Name="InstructorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Vehicles__Instru__4F7CD00D">
-          <End Type="DrivingSchoolDBModel.Instructors" Role="Instructors" Multiplicity="0..1" />
-          <End Type="DrivingSchoolDBModel.Vehicles" Role="Vehicles" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Instructors">
-              <PropertyRef Name="InstructorID" />
-            </Principal>
-            <Dependent Role="Vehicles">
-              <PropertyRef Name="InstructorID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Maintenan__Vehic__49C3F6B7">
-          <End Type="DrivingSchoolDBModel.Vehicles" Role="Vehicles" Multiplicity="0..1" />
-          <End Type="DrivingSchoolDBModel.MaintenanceHistory" Role="MaintenanceHistory" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vehicles">
-              <PropertyRef Name="VehicleID" />
-            </Principal>
-            <Dependent Role="MaintenanceHistory">
-              <PropertyRef Name="VehicleID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -695,12 +695,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище DrivingSchoolDBModelContainer" CdmEntityContainer="DrivingSchoolDBEntities1">
+          <EntitySetMapping Name="Cars">
+            <EntityTypeMapping TypeName="DrivingSchoolDBModel.Cars">
+              <MappingFragment StoreEntitySet="Cars">
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
+                <ScalarProperty Name="CarID" ColumnName="CarID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Courses">
             <EntityTypeMapping TypeName="DrivingSchoolDBModel.Courses">
               <MappingFragment StoreEntitySet="Courses">
@@ -774,7 +786,7 @@
                 <ScalarProperty Name="Cost" ColumnName="Cost" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="MaintenanceDate" ColumnName="MaintenanceDate" />
-                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="CarID" ColumnName="CarID" />
                 <ScalarProperty Name="MaintenanceID" ColumnName="MaintenanceID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -857,18 +869,6 @@
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vehicles">
-            <EntityTypeMapping TypeName="DrivingSchoolDBModel.Vehicles">
-              <MappingFragment StoreEntitySet="Vehicles">
-                <ScalarProperty Name="Year" ColumnName="Year" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="InstructorID" ColumnName="InstructorID" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="LicensePlate" ColumnName="LicensePlate" />
-                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

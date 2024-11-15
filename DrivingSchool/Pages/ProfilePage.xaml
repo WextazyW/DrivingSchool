@@ -48,7 +48,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <ui:TextBlock Text="Уведомление:" Foreground="White" FontSize="20" Height="30"/>
-                <ui:TextBlock x:Name="txtNotification" Text="" Margin="52,0,0,0" Foreground="White" FontSize="20" Height="34" Width="95" RenderTransformOrigin="0.522,0.629"/>
+                <ui:TextBlock x:Name="txtNotification" Text="" Margin="52,0,0,0" Foreground="White" FontSize="20" Height="34" Width="289" RenderTransformOrigin="0.522,0.629"/>
             </StackPanel>
         </StackPanel>
     </Grid>

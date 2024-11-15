@@ -39,5 +39,15 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new SchedulePage());
         }
+
+        private void CarPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new CarPage());
+        }
+
+        private void InstructorPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new InstructorPage());
+        }
     }
 }

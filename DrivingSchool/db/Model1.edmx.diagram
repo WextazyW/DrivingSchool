@@ -5,6 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4e604b9e2d7c42d5a6e5dc83c245cf5a" Name="Diagram1">
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Cars" Width="1.5" PointX="8.25" PointY="3.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Courses" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Discounts" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.DrivingCategories" Width="1.5" PointX="0.75" PointY="3.75" />
@@ -19,13 +20,12 @@
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Students" Width="1.5" PointX="3" PointY="7" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.users" Width="1.5" PointX="0.75" PointY="8.25" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Vehicles" Width="1.5" PointX="8.25" PointY="3.75" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Feedback__Instru__44FF419A" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Feedback__Studen__4222D4EF" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Grades__StudentI__440B1D61" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Schedule__Instru__4E88ABD4" />
-        <AssociationConnector Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" />
-        <AssociationConnector Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Notificat__Stude__45F365D3" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_Schedule_Students" />

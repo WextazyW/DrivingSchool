@@ -1,0 +1,31 @@
+﻿<Page x:Class="DrivingSchool.Pages.CarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="CarPage">
+
+    <Grid Background="#0E2039">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="CarList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding CarID}" Width="40" Header="id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding LicensePlate}" Width="100" Header="Номер авто"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Status}" Width="70" Header="Статус"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding InstructorID}" Width="120" Header="Инструктор"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Model}" Width="140" Header="Модель"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Year}" Width="80" Header="Год"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation='Horizontal' Margin="67,611,756,163">
+            <ui:Button Content="Сформировать отчет" Height="43"  Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

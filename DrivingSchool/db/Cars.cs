@@ -12,23 +12,23 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Vehicles
+    public partial class Cars
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Vehicles()
+        public Cars()
         {
             this.MaintenanceHistory = new HashSet<MaintenanceHistory>();
         }
     
-        public int VehicleID { get; set; }
+        public int CarID { get; set; }
         public string LicensePlate { get; set; }
         public string Status { get; set; }
         public Nullable<int> InstructorID { get; set; }
         public string Model { get; set; }
         public Nullable<int> Year { get; set; }
     
-        public virtual Instructors Instructors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaintenanceHistory> MaintenanceHistory { get; set; }
+        public virtual Instructors Instructors { get; set; }
     }
 }

@@ -15,11 +15,11 @@ namespace DrivingSchool.db
     public partial class MaintenanceHistory
     {
         public int MaintenanceID { get; set; }
-        public Nullable<int> VehicleID { get; set; }
+        public Nullable<int> CarID { get; set; }
         public Nullable<System.DateTime> MaintenanceDate { get; set; }
         public string Description { get; set; }
         public Nullable<decimal> Cost { get; set; }
     
-        public virtual Vehicles Vehicles { get; set; }
+        public virtual Cars Cars { get; set; }
     }
 }
