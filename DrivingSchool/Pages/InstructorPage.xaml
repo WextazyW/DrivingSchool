@@ -18,7 +18,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding InstructorID}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="100" Header="Имя"/>
                     <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="70" Header="Фамилия"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Rating}" Width="120" Header="Рейтинг"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Rating}" Width="100" Header="Рейтинг"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="140" Header="Email"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="80" Header="Телефон"/>
                 </GridView>

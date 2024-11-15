@@ -20,6 +20,7 @@ namespace DrivingSchool.db
         public Nullable<System.DateTime> PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
         public Nullable<decimal> Discount { get; set; }
+        public string Category { get; set; }
     
         public virtual Students Students { get; set; }
     }

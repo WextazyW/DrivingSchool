@@ -17,17 +17,18 @@ using DrivingSchool.db;
 namespace DrivingSchool.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для InstructorPage.xaml
+    /// Логика взаимодействия для PaymentPage.xaml
     /// </summary>
-    public partial class InstructorPage : Page
+    public partial class PaymentPage : Page
     {
-        public InstructorPage()
+        public PaymentPage()
         {
             InitializeComponent();
         }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            InstructorList.ItemsSource = ConnectionDB.db.Instructors.ToList();
+            PaymentList.ItemsSource = ConnectionDB.db.Payments.ToList();
         }
     }
 }

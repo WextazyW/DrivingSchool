@@ -107,6 +107,7 @@
           <Property Name="PaymentDate" Type="date" />
           <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
           <Property Name="Discount" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Category" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Reports">
           <Key>
@@ -511,6 +512,7 @@
           <Property Name="PaymentDate" Type="DateTime" Precision="0" />
           <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Discount" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Category" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Students" Relationship="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45" FromRole="Payments" ToRole="Students" />
         </EntityType>
         <EntityType Name="Reports">
@@ -805,6 +807,7 @@
           <EntitySetMapping Name="Payments">
             <EntityTypeMapping TypeName="DrivingSchoolDBModel.Payments">
               <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="Discount" ColumnName="Discount" />
                 <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
                 <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />

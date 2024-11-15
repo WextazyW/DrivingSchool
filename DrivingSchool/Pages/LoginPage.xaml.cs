@@ -20,9 +20,6 @@ using System.Windows.Shapes;
 
 namespace DrivingSchool.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
-    /// </summary>
     public partial class LoginPage : Page
     {
         static MainWindow _mainWindow;
@@ -47,8 +44,7 @@ namespace DrivingSchool.Pages
 
                 var student = ConnectionDB.db.Students.FirstOrDefault(log => log.login == login && log.password == password);
                 var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
-                if (student == null)
-                {
+                if (student == null) {
                     MessageBox.Show("Неверный логин или пароль");
                     return;
                 }
@@ -59,7 +55,7 @@ namespace DrivingSchool.Pages
         }
         private BitmapImage GenerateQrCodeBitmapImage(string text)
         {
-            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+            using (QRCodeGenerator qrGenerator = new QRCodeGenerator())                     
             {
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q); using (QRCode qrCode = new QRCode(qrCodeData))
                 {

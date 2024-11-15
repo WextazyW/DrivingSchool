@@ -17,7 +17,7 @@
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding CarID}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding LicensePlate}" Width="100" Header="Номер авто"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Status}" Width="70" Header="Статус"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Status}" Width="140" Header="Статус"/>
                     <GridViewColumn DisplayMemberBinding="{Binding InstructorID}" Width="120" Header="Инструктор"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Model}" Width="140" Header="Модель"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Year}" Width="80" Header="Год"/>
