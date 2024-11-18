@@ -54,5 +54,15 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new PaymentPage());
         }
+
+        private void ResultPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new ResultPage());
+        }
+
+        private void AnalysisPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new AnalysisPage());
+        }
     }
 }

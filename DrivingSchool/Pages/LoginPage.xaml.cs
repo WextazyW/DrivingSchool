@@ -43,14 +43,21 @@ namespace DrivingSchool.Pages
                 string password = txtPassword.Password;
 
                 var student = ConnectionDB.db.Students.FirstOrDefault(log => log.login == login && log.password == password);
-                var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
-                if (student == null) {
+                if (student != null)
+                {
+                    var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
+                    if(notification != null)
+                    {
+                        ConnectionDB.notifications = notification;
+                        ConnectionDB.students = student;
+                        _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage());
+                    }
+                }
+                else
+                {
                     MessageBox.Show("Неверный логин или пароль");
                     return;
-                }
-                ConnectionDB.students = student;
-                ConnectionDB.notifications = notification;
-                _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage());
+                }                   
             }
         }
         private BitmapImage GenerateQrCodeBitmapImage(string text)

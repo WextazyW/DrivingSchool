@@ -20,7 +20,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="170,106,150,314" Grid.RowSpan="2">
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="25,106,21,314" Grid.RowSpan="2">
             <StackPanel Orientation="Vertical" Name="StudentsPage" Height="189" Width="225" VerticalAlignment="Top" MouseDown="StudentsPage_MouseDown">
                 <ui:Image Source="/png/students.png" Height="140" Width="225"/>
                 <ui:TextBlock Text="Студенты" TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="20" Foreground="White" Grid.Row="1" Height="29" Width="95"/>
@@ -33,8 +33,12 @@
                 <ui:Image Source="/png/schedule.png" Height="141"/>
                 <ui:TextBlock Text="Расписание" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
             </StackPanel>
+            <StackPanel Orientation="Vertical" Name="AnalysisPage" Width="200" Margin="100,0,0,0" Height="207" MouseDown="AnalysisPage_MouseDown">
+                <ui:Image Source="/png/analiz.png" Height="141"/>
+                <ui:TextBlock Text="Анализ" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="170,170,150,42" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Margin="36,170,5,42" Grid.Row="1">
             <StackPanel Orientation="Vertical" Width="200" Name="CarPage" MouseDown="CarPage_MouseDown">
                 <ui:Image Source="/png/car.png" Height="164"/>
                 <ui:TextBlock Text="Машины" Foreground="White" HorizontalAlignment="Center" FontSize="20"/>
@@ -46,6 +50,10 @@
             <StackPanel Orientation="Vertical" Name="PaymentPage" Width="200" Margin="120,0,0,0" Height="207" MouseDown="PaymentPage_MouseDown">
                 <ui:Image Source="/png/payment.png" Height="160"/>
                 <ui:TextBlock Text="Платежи" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Name="ResultPage" Width="200" Margin="100,0,0,0" Height="207" MouseDown="ResultPage_MouseDown">
+                <ui:Image Source="/png/exams.png" Height="160"/>
+                <ui:TextBlock Text="Экзамены" TextWrapping="Wrap" Foreground="White" FontSize="20" HorizontalAlignment="Center"/>
             </StackPanel>
         </StackPanel>
     </Grid>

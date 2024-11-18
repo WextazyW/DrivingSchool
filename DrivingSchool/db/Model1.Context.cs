@@ -37,6 +37,7 @@ namespace DrivingSchool.db
         public virtual DbSet<Notifications> Notifications { get; set; }
         public virtual DbSet<Payments> Payments { get; set; }
         public virtual DbSet<Reports> Reports { get; set; }
+        public virtual DbSet<ResourceUtilization> ResourceUtilization { get; set; }
         public virtual DbSet<Results> Results { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
         public virtual DbSet<Students> Students { get; set; }

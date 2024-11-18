@@ -50,6 +50,7 @@
           </Key>
           <Property Name="ExamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ExamDate" Type="date" Nullable="false" />
+          <Property Name="ExamPoints" Type="int" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -125,6 +126,16 @@
           <Property Name="ReportType" Type="nvarchar" MaxLength="50" />
           <Property Name="Content" Type="nvarchar(max)" />
           <Property Name="GeneratedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResourceUtilization">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResourceType" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResourceName" Type="nvarchar" MaxLength="100" />
+          <Property Name="NumberOfSessions" Type="int" />
+          <Property Name="TotalMinutesScheduled" Type="int" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -336,6 +347,7 @@
           <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResourceUtilization" EntityType="Self.ResourceUtilization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
@@ -407,6 +419,7 @@
           <EntitySet Name="Notifications" EntityType="DrivingSchoolDBModel.Notifications" />
           <EntitySet Name="Payments" EntityType="DrivingSchoolDBModel.Payments" />
           <EntitySet Name="Reports" EntityType="DrivingSchoolDBModel.Reports" />
+          <EntitySet Name="ResourceUtilization" EntityType="DrivingSchoolDBModel.ResourceUtilization" />
           <EntitySet Name="Results" EntityType="DrivingSchoolDBModel.Results" />
           <EntitySet Name="Schedule" EntityType="DrivingSchoolDBModel.Schedule" />
           <EntitySet Name="Students" EntityType="DrivingSchoolDBModel.Students" />
@@ -508,6 +521,7 @@
           </Key>
           <Property Name="ExamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ExamDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExamPoints" Type="Int32" />
           <NavigationProperty Name="Results" Relationship="DrivingSchoolDBModel.FK__Results__ExamID__2B0A656D" FromRole="Exams" ToRole="Results" />
         </EntityType>
         <EntityType Name="Feedback">
@@ -593,6 +607,16 @@
           <Property Name="ReportType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GeneratedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ResourceUtilization">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NumberOfSessions" Type="Int32" />
+          <Property Name="TotalMinutesScheduled" Type="Int32" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -855,6 +879,7 @@
           <EntitySetMapping Name="Exams">
             <EntityTypeMapping TypeName="DrivingSchoolDBModel.Exams">
               <MappingFragment StoreEntitySet="Exams">
+                <ScalarProperty Name="ExamPoints" ColumnName="ExamPoints" />
                 <ScalarProperty Name="ExamDate" ColumnName="ExamDate" />
                 <ScalarProperty Name="ExamID" ColumnName="ExamID" />
               </MappingFragment>
@@ -939,6 +964,17 @@
                 <ScalarProperty Name="ReportType" ColumnName="ReportType" />
                 <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
                 <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResourceUtilization">
+            <EntityTypeMapping TypeName="DrivingSchoolDBModel.ResourceUtilization">
+              <MappingFragment StoreEntitySet="ResourceUtilization">
+                <ScalarProperty Name="TotalMinutesScheduled" ColumnName="TotalMinutesScheduled" />
+                <ScalarProperty Name="NumberOfSessions" ColumnName="NumberOfSessions" />
+                <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+                <ScalarProperty Name="ResourceType" ColumnName="ResourceType" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
