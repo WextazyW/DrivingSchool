@@ -1,9 +1,10 @@
-﻿<Page x:Class="DrivingSchool.Pages.GradesPage"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DrivingSchool.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.GradesPage"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1200"
       Title="GradesPage">
@@ -32,6 +33,6 @@
             </ListView.View>
         </ListView>
         <Button Content="Сформировать отчет" Margin="84,38,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="174" Click="Button_Click"/>
-
+        <ui:Button Content="Назад" Grid.Column="1" Margin="442,38,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="101" Click="Button_Click_1"/>
     </Grid>
 </Page>

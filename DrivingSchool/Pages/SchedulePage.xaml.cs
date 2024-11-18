@@ -65,5 +65,10 @@ namespace DrivingSchool.Pages
                 ScheduleList.ItemsSource = ConnectionDB.db.Schedule.ToList();
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LIstOfReports());
+        }
     }
 }

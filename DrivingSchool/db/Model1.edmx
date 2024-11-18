@@ -44,6 +44,13 @@
           <Property Name="Category" Type="char" MaxLength="1" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="Exams">
+          <Key>
+            <PropertyRef Name="ExamID" />
+          </Key>
+          <Property Name="ExamID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExamDate" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="Feedback">
           <Key>
             <PropertyRef Name="FeedbackID" />
@@ -118,6 +125,16 @@
           <Property Name="ReportType" Type="nvarchar" MaxLength="50" />
           <Property Name="Content" Type="nvarchar(max)" />
           <Property Name="GeneratedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExamID" Type="int" />
+          <Property Name="StudentID" Type="int" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="Passed" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Schedule">
           <Key>
@@ -234,6 +251,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Results__ExamID__2B0A656D">
+          <End Role="Exams" Type="Self.Exams" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exams">
+              <PropertyRef Name="ExamID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="ExamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Results__Student__2BFE89A6">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Schedule__Instru__4E88ABD4">
           <End Role="Instructors" Type="Self.Instructors" Multiplicity="0..1" />
           <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
@@ -287,6 +328,7 @@
           <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discounts" EntityType="Self.Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DrivingCategories" EntityType="Self.DrivingCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exams" EntityType="Self.Exams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Grades" EntityType="Self.Grades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instructors" EntityType="Self.Instructors" Schema="dbo" store:Type="Tables" />
@@ -294,6 +336,7 @@
           <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -322,6 +365,14 @@
             <End Role="Students" EntitySet="Students" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
+          <AssociationSet Name="FK__Results__ExamID__2B0A656D" Association="Self.FK__Results__ExamID__2B0A656D">
+            <End Role="Exams" EntitySet="Exams" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Results__Student__2BFE89A6" Association="Self.FK__Results__Student__2BFE89A6">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
           <AssociationSet Name="FK__Schedule__Instru__4E88ABD4" Association="Self.FK__Schedule__Instru__4E88ABD4">
             <End Role="Instructors" EntitySet="Instructors" />
             <End Role="Schedule" EntitySet="Schedule" />
@@ -348,6 +399,7 @@
           <EntitySet Name="Courses" EntityType="DrivingSchoolDBModel.Courses" />
           <EntitySet Name="Discounts" EntityType="DrivingSchoolDBModel.Discounts" />
           <EntitySet Name="DrivingCategories" EntityType="DrivingSchoolDBModel.DrivingCategories" />
+          <EntitySet Name="Exams" EntityType="DrivingSchoolDBModel.Exams" />
           <EntitySet Name="Feedback" EntityType="DrivingSchoolDBModel.Feedback" />
           <EntitySet Name="Grades" EntityType="DrivingSchoolDBModel.Grades" />
           <EntitySet Name="Instructors" EntityType="DrivingSchoolDBModel.Instructors" />
@@ -355,6 +407,7 @@
           <EntitySet Name="Notifications" EntityType="DrivingSchoolDBModel.Notifications" />
           <EntitySet Name="Payments" EntityType="DrivingSchoolDBModel.Payments" />
           <EntitySet Name="Reports" EntityType="DrivingSchoolDBModel.Reports" />
+          <EntitySet Name="Results" EntityType="DrivingSchoolDBModel.Results" />
           <EntitySet Name="Schedule" EntityType="DrivingSchoolDBModel.Schedule" />
           <EntitySet Name="Students" EntityType="DrivingSchoolDBModel.Students" />
           <EntitySet Name="sysdiagrams" EntityType="DrivingSchoolDBModel.sysdiagrams" />
@@ -366,6 +419,10 @@
           <AssociationSet Name="FK__Vehicles__Instru__4F7CD00D" Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D">
             <End Role="Instructors" EntitySet="Instructors" />
             <End Role="Cars" EntitySet="Cars" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Results__ExamID__2B0A656D" Association="DrivingSchoolDBModel.FK__Results__ExamID__2B0A656D">
+            <End Role="Exams" EntitySet="Exams" />
+            <End Role="Results" EntitySet="Results" />
           </AssociationSet>
           <AssociationSet Name="FK__Feedback__Instru__44FF419A" Association="DrivingSchoolDBModel.FK__Feedback__Instru__44FF419A">
             <End Role="Instructors" EntitySet="Instructors" />
@@ -390,6 +447,10 @@
           <AssociationSet Name="FK__Payments__Studen__47DBAE45" Association="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45">
             <End Role="Students" EntitySet="Students" />
             <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Results__Student__2BFE89A6" Association="DrivingSchoolDBModel.FK__Results__Student__2BFE89A6">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Results" EntitySet="Results" />
           </AssociationSet>
           <AssociationSet Name="FK_Schedule_Students" Association="DrivingSchoolDBModel.FK_Schedule_Students">
             <End Role="Students" EntitySet="Students" />
@@ -440,6 +501,14 @@
           <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Exams">
+          <Key>
+            <PropertyRef Name="ExamID" />
+          </Key>
+          <Property Name="ExamID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExamDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Results" Relationship="DrivingSchoolDBModel.FK__Results__ExamID__2B0A656D" FromRole="Exams" ToRole="Results" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -525,6 +594,18 @@
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="GeneratedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ResultID" />
+          </Key>
+          <Property Name="ResultID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExamID" Type="Int32" />
+          <Property Name="StudentID" Type="Int32" />
+          <Property Name="Score" Type="Int32" Nullable="false" />
+          <Property Name="Passed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Exams" Relationship="DrivingSchoolDBModel.FK__Results__ExamID__2B0A656D" FromRole="Results" ToRole="Exams" />
+          <NavigationProperty Name="Students" Relationship="DrivingSchoolDBModel.FK__Results__Student__2BFE89A6" FromRole="Results" ToRole="Students" />
+        </EntityType>
         <EntityType Name="Schedule">
           <Key>
             <PropertyRef Name="ScheduleID" />
@@ -556,6 +637,7 @@
           <NavigationProperty Name="Grades" Relationship="DrivingSchoolDBModel.FK__Grades__StudentI__440B1D61" FromRole="Students" ToRole="Grades" />
           <NavigationProperty Name="Notifications" Relationship="DrivingSchoolDBModel.FK__Notificat__Stude__45F365D3" FromRole="Students" ToRole="Notifications" />
           <NavigationProperty Name="Payments" Relationship="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45" FromRole="Students" ToRole="Payments" />
+          <NavigationProperty Name="Results" Relationship="DrivingSchoolDBModel.FK__Results__Student__2BFE89A6" FromRole="Students" ToRole="Results" />
           <NavigationProperty Name="Schedule" Relationship="DrivingSchoolDBModel.FK_Schedule_Students" FromRole="Students" ToRole="Schedule" />
           <NavigationProperty Name="users" Relationship="DrivingSchoolDBModel.FK_Students_users" FromRole="Students" ToRole="users" />
         </EntityType>
@@ -598,6 +680,18 @@
             </Principal>
             <Dependent Role="Cars">
               <PropertyRef Name="InstructorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Results__ExamID__2B0A656D">
+          <End Type="DrivingSchoolDBModel.Exams" Role="Exams" Multiplicity="0..1" />
+          <End Type="DrivingSchoolDBModel.Results" Role="Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Exams">
+              <PropertyRef Name="ExamID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="ExamID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -673,6 +767,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Results__Student__2BFE89A6">
+          <End Type="DrivingSchoolDBModel.Students" Role="Students" Multiplicity="0..1" />
+          <End Type="DrivingSchoolDBModel.Results" Role="Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Schedule_Students">
           <End Type="DrivingSchoolDBModel.Students" Role="Students" Multiplicity="0..1" />
           <End Type="DrivingSchoolDBModel.Schedule" Role="Schedule" Multiplicity="*" />
@@ -743,6 +849,14 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Category" ColumnName="Category" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Exams">
+            <EntityTypeMapping TypeName="DrivingSchoolDBModel.Exams">
+              <MappingFragment StoreEntitySet="Exams">
+                <ScalarProperty Name="ExamDate" ColumnName="ExamDate" />
+                <ScalarProperty Name="ExamID" ColumnName="ExamID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -825,6 +939,17 @@
                 <ScalarProperty Name="ReportType" ColumnName="ReportType" />
                 <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
                 <ScalarProperty Name="ReportID" ColumnName="ReportID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="DrivingSchoolDBModel.Results">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="Passed" ColumnName="Passed" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="ExamID" ColumnName="ExamID" />
+                <ScalarProperty Name="ResultID" ColumnName="ResultID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

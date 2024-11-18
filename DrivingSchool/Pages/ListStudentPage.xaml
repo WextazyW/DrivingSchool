@@ -31,5 +31,6 @@
                 <ui:Button Content="Добавить студента" Height="43" Margin="50,0,0,0" Click="Button_Click_1"/>
             </StackPanel>
         </Grid>
+        <ui:Button Content="Назад" Margin="926,642,0,0" VerticalAlignment="Top" Height="42" Width="95" Click="Button_Click_2"/>
     </Grid>
 </Page>

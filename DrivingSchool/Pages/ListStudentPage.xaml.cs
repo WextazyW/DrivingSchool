@@ -35,5 +35,10 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new SignUpPage());
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LIstOfReports());
+        }
     }
 }

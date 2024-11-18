@@ -27,5 +27,10 @@ namespace DrivingSchool.Pages
         {
             CarList.ItemsSource = ConnectionDB.db.Cars.ToList();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new LIstOfReports());
+        }
     }
 }
