@@ -24,13 +24,12 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding ExamID}" Width="40" Header="id"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding ExamDate}" Width="100" Header="Дата"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding ExamDate}" Width="180" Header="Дата"/>
                     <GridViewColumn DisplayMemberBinding="{Binding ExamPoints}" Width="140" Header="Баллы"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Orientation='Horizontal' Margin="67,655,79,119">
-            <ui:Button Content="Сформировать отчет" Height="43"  Click="Button_Click"/>
             <ui:Button Content="Назад" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>

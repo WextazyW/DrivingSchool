@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DrivingSchool.Pages"
-      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.GradesPage"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" xmlns:liveCharts="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:oxy="http://oxyplot.org/wpf" x:Class="DrivingSchool.Pages.GradesPage"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1200"
       Title="GradesPage">
@@ -32,7 +32,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Сформировать отчет" Margin="84,38,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="174" Click="Button_Click"/>
-        <ui:Button Content="Назад" Grid.Column="1" Margin="442,38,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="101" Click="Button_Click_1"/>
+        <oxy:PlotView x:Name="plotView" Grid.ColumnSpan="2" Margin="120,102,270,212" Grid.Row="1" Grid.RowSpan="2" />
+        <ui:Button Content="Сформировать отчет" Grid.Column="1" Background="White"  Margin="369,60,0,0" Grid.Row="2" VerticalAlignment="Top" Height="46" Width="164" Click="Button_Click"/>
+        <ui:Button Content="Назад" Grid.Column="2" Margin="49,58,0,0" Grid.Row="2" VerticalAlignment="Top" Height="48" Width="101" Click="Button_Click_1"/>
     </Grid>
 </Page>

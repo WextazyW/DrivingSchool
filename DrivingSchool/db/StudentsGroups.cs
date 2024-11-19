@@ -12,17 +12,15 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Payments
+    public partial class StudentsGroups
     {
-        public int PaymentID { get; set; }
-        public Nullable<int> StudentID { get; set; }
-        public Nullable<decimal> Amount { get; set; }
-        public Nullable<System.DateTime> PaymentDate { get; set; }
-        public string PaymentMethod { get; set; }
-        public Nullable<decimal> Discount { get; set; }
-        public Nullable<int> Category { get; set; }
+        public int StudentGroupId { get; set; }
+        public Nullable<int> StudentId { get; set; }
+        public Nullable<int> GroupId { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
-        public virtual DrivingCategories DrivingCategories { get; set; }
+        public virtual Groups Groups { get; set; }
         public virtual Students Students { get; set; }
     }
 }

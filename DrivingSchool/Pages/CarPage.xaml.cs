@@ -21,10 +21,6 @@ namespace DrivingSchool.Pages
         public CarPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             CarList.ItemsSource = ConnectionDB.db.Cars.ToList();
         }
 

@@ -32,6 +32,7 @@ namespace DrivingSchool.db
         public virtual DbSet<Exams> Exams { get; set; }
         public virtual DbSet<Feedback> Feedback { get; set; }
         public virtual DbSet<Grades> Grades { get; set; }
+        public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<Instructors> Instructors { get; set; }
         public virtual DbSet<MaintenanceHistory> MaintenanceHistory { get; set; }
         public virtual DbSet<Notifications> Notifications { get; set; }
@@ -41,6 +42,7 @@ namespace DrivingSchool.db
         public virtual DbSet<Results> Results { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
         public virtual DbSet<Students> Students { get; set; }
+        public virtual DbSet<StudentsGroups> StudentsGroups { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<users> users { get; set; }
     }

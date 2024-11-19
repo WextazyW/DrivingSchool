@@ -1,0 +1,41 @@
+﻿<ui:Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:liveCharts="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:ui1="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.Groups"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="Groups">
+
+    <ui:Grid Background="#0E2039">
+        <ui:Grid.ColumnDefinitions>
+            <ui:ColumnDefinition/>
+        </ui:Grid.ColumnDefinitions>
+        <ui:ListView x:Name="StudentGroupList" ui:ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding StudentGroupId}" Width="40" Header="id"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding StudentId}" Width="100" Header="Студент"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding GroupId}" Width="100" Header="Группа"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding StartDate}" Width="170" Header="Дата начала"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding EndDate}" Width="170" Header="Дата окончания"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+        <ui:ListView x:Name="GroupList" ui:ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="679,99,79,244">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding GroupId}" Width="40" Header="id"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Category}" Width="90" Header="Категория"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding CountHumans}" Width="80" Header="Баллы"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+        <ui:StackPanel Orientation='Horizontal' Margin="73,701,73,73">
+            <ui:Button Content="Добавить" Click="Button_Click"/>
+            <ui:Button Content="Назад" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+        </ui:StackPanel>
+    </ui:Grid>
+</ui:Page>

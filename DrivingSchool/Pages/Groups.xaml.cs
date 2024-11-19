@@ -17,14 +17,15 @@ using DrivingSchool.db;
 namespace DrivingSchool.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для InstructorPage.xaml
+    /// Логика взаимодействия для Groups.xaml
     /// </summary>
-    public partial class InstructorPage : Page
+    public partial class Groups : Page
     {
-        public InstructorPage()
+        public Groups()
         {
             InitializeComponent();
-            InstructorList.ItemsSource = ConnectionDB.db.Instructors.ToList();
+            StudentGroupList.ItemsSource = ConnectionDB.db.StudentsGroups.ToList();
+            GroupList.ItemsSource = ConnectionDB.db.Groups.ToList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -32,9 +33,9 @@ namespace DrivingSchool.Pages
             NavigationService.Navigate(new LIstOfReports());
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new FeedBackPage());
+            NavigationService.Navigate(new AddGroup());
         }
     }
 }

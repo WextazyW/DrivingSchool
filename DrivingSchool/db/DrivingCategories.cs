@@ -14,8 +14,17 @@ namespace DrivingSchool.db
     
     public partial class DrivingCategories
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DrivingCategories()
+        {
+            this.Payments = new HashSet<Payments>();
+        }
+    
         public int CategoryID { get; set; }
         public string Category { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> Price { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Payments> Payments { get; set; }
     }
 }

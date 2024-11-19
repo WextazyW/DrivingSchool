@@ -20,13 +20,13 @@
                     <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="70" Header="Фамилия"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Rating}" Width="100" Header="Рейтинг"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="140" Header="Email"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="80" Header="Телефон"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="120" Header="Телефон"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Orientation='Horizontal' Margin="67,611,112,163">
-            <ui:Button Content="Сформировать отчет" Height="43"  Click="Button_Click"/>
-            <ui:Button Content="Назад" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Отзывы" Height="43" Margin="100,0,0,0" Click="Button_Click_2"/>
+            <ui:Button Content="Назад" Height="44" Width="100" Margin="550,0,0,0" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Page>

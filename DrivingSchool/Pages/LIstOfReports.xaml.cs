@@ -64,5 +64,10 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new AnalysisPage());
         }
+
+        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Groups());
+        }
     }
 }

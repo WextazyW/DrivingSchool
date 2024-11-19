@@ -41,8 +41,6 @@ namespace DrivingSchool.Pages
                 && s.FirstName == fName
                 && s.LastName == lName
                 && s.DateOfBirth == DateTime.Parse(dateBirth)
-                && s.StartDate == DateTime.Parse(startDate)
-                && s.EndDate == DateTime.Parse(endDate)
                 && s.DrivingCategory == category
             );
 
@@ -54,8 +52,6 @@ namespace DrivingSchool.Pages
                 FirstName = fName,
                 LastName = lName,
                 DateOfBirth = Convert.ToDateTime(dateBirth),
-                StartDate = Convert.ToDateTime(startDate),
-                EndDate = Convert.ToDateTime(endDate),
                 DrivingCategory = category,
                 users = tempUser,
             };
@@ -65,6 +61,11 @@ namespace DrivingSchool.Pages
             MessageBox.Show("Регистрация прошла успешно");
             NavigationService.GoBack();
             return;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }

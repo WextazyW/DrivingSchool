@@ -24,11 +24,8 @@ namespace DrivingSchool.Pages
         public PaymentPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             PaymentList.ItemsSource = ConnectionDB.db.Payments.ToList();
+            CategoryList.ItemsSource = ConnectionDB.db.DrivingCategories.ToList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

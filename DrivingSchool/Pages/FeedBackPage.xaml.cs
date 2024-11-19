@@ -17,24 +17,19 @@ using DrivingSchool.db;
 namespace DrivingSchool.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для InstructorPage.xaml
+    /// Логика взаимодействия для FeedBackPage.xaml
     /// </summary>
-    public partial class InstructorPage : Page
+    public partial class FeedBackPage : Page
     {
-        public InstructorPage()
+        public FeedBackPage()
         {
             InitializeComponent();
-            InstructorList.ItemsSource = ConnectionDB.db.Instructors.ToList();
+            FeedBackList.ItemsSource = ConnectionDB.db.Feedback.ToList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new LIstOfReports());
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new FeedBackPage());
+            NavigationService.GoBack();
         }
     }
 }

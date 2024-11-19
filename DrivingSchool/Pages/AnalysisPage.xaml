@@ -24,7 +24,6 @@
             </ListView.View>
         </ListView>
         <StackPanel Orientation='Horizontal' Margin="67,611,79,163">
-            <ui:Button Content="Сформировать отчет" Height="43"  Click="Button_Click"/>
             <ui:Button Content="Экспортировать отчет" Height="43" Margin="100,0,0,0" Click="Button_Click_2"/>
             <ui:Button Content="Назад" Height="44" Width="100" Margin="500,0,0,0" Click="Button_Click_1"/>
         </StackPanel>

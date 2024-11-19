@@ -23,14 +23,13 @@ namespace DrivingSchool.db
             this.Payments = new HashSet<Payments>();
             this.Results = new HashSet<Results>();
             this.Schedule = new HashSet<Schedule>();
+            this.StudentsGroups = new HashSet<StudentsGroups>();
         }
     
         public int StudentID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public System.DateTime DateOfBirth { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
         public string DrivingCategory { get; set; }
         public Nullable<int> user_id { get; set; }
         public string login { get; set; }
@@ -49,5 +48,7 @@ namespace DrivingSchool.db
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedule { get; set; }
         public virtual users users { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentsGroups> StudentsGroups { get; set; }
     }
 }

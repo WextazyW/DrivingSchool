@@ -24,8 +24,6 @@ namespace DrivingSchool.Pages
             txtFName.Text = ConnectionDB.students.FirstName.ToString();
             txtLName.Text = ConnectionDB.students.LastName.ToString();
             txtDateBirth.Text = ConnectionDB.students.DateOfBirth.ToString();
-            txtDateStart.Text = ConnectionDB.students.StartDate.ToString();
-            txtDateEnd.Text = ConnectionDB.students.EndDate.ToString();
             txtCategory.Text = ConnectionDB.students.DrivingCategory.ToString();
             txtNotification.Text = ConnectionDB.notifications.Message.ToString();
         }

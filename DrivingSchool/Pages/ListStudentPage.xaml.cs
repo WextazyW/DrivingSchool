@@ -24,10 +24,6 @@ namespace DrivingSchool.Pages
         public ListStudentPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             StudentList.ItemsSource = ConnectionDB.db.Students.ToList();
         }
 

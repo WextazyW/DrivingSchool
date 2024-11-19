@@ -19,15 +19,12 @@
                         <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="40" Header="id"/>
                         <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="80" Header="Имя"/>
                         <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="70" Header="Фамилия"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding DateOfBirth}" Width="140" Header="Дата рождения"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding StartDate}" Width="140" Header="Дата начала"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding EndDate}" Width="140" Header="Дата окончания"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding DateOfBirth}" Width="180" Header="Дата рождения"/>
                         <GridViewColumn DisplayMemberBinding="{Binding DrivingCategory}" Width="70" Header="Категория"/>
                     </GridView>
                 </ListView.View>
             </ListView>
             <StackPanel Orientation='Horizontal' Margin="40,475,673,0">
-                <ui:Button Content="Сформировать отчет" Height="43"  Click="Button_Click"/>
                 <ui:Button Content="Добавить студента" Height="43" Margin="50,0,0,0" Click="Button_Click_1"/>
             </StackPanel>
         </Grid>

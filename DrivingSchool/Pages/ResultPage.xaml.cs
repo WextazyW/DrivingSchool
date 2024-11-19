@@ -24,10 +24,6 @@ namespace DrivingSchool.Pages
         public ResultPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             ResultList.ItemsSource = ConnectionDB.db.Results.ToList();
             ExamsList.ItemsSource = ConnectionDB.db.Exams.ToList();
         }

@@ -12,17 +12,19 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Payments
+    public partial class Groups
     {
-        public int PaymentID { get; set; }
-        public Nullable<int> StudentID { get; set; }
-        public Nullable<decimal> Amount { get; set; }
-        public Nullable<System.DateTime> PaymentDate { get; set; }
-        public string PaymentMethod { get; set; }
-        public Nullable<decimal> Discount { get; set; }
-        public Nullable<int> Category { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Groups()
+        {
+            this.StudentsGroups = new HashSet<StudentsGroups>();
+        }
     
-        public virtual DrivingCategories DrivingCategories { get; set; }
-        public virtual Students Students { get; set; }
+        public int GroupId { get; set; }
+        public string Category { get; set; }
+        public string CountHumans { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentsGroups> StudentsGroups { get; set; }
     }
 }

@@ -16,14 +16,13 @@
                     <GridViewColumn DisplayMemberBinding="{Binding ScheduleID}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="80" Header="Студент"/>
                     <GridViewColumn DisplayMemberBinding="{Binding InstructorID}" Width="70" Header="Инструктор"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding StartTime}" Width="150" Header="Дата начала"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding EndTime}" Width="150" Header="Дата окончания"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding StartTime}" Width="180" Header="Дата начала"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding EndTime}" Width="180" Header="Дата окончания"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Status}" Width="140" Header="Статус"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal" Margin="49,401,244,235">
-            <ui:Button Content="Сформировать отчет" VerticalAlignment="Center"  Background="White" Height="50" Width="171" Click="Button_Click"/>
             <ui:Button Content="Добавить расписание" Background="White" Margin="60,0,0,0" Height="50" Click="Button_Click_1"/>
             <ui:Button Content="Редактировать" Background="White" Margin="60,0,0,0" Height="50" Click="Button_Click_2"/>
             <StackPanel Orientation="Vertical" Height="154">

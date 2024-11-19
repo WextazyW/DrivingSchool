@@ -12,7 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DocumentFormat.OpenXml.Office.CustomXsn;
 using DrivingSchool.db;
+using LiveCharts.Wpf;
+using LiveCharts;
+using OxyPlot;
+using OxyPlot.Series;
+using LineSeries = OxyPlot.Series.LineSeries;
 
 namespace DrivingSchool.Pages
 {
@@ -24,16 +30,34 @@ namespace DrivingSchool.Pages
         public GradesPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             GradesList.ItemsSource = ConnectionDB.db.Grades.ToList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LIstOfReports());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var model = new PlotModel { Title = "Scores" };
+            var series = new LineSeries { Title = "dsd"};
+
+            var grades = new List<Grades>
+            {
+                new Grades {TheoreticalExamScore = 20, AttendancePercentage = 55, PracticalExamScore = 35},
+                new Grades {TheoreticalExamScore = 20, AttendancePercentage = 30, PracticalExamScore = 50},
+                new Grades {TheoreticalExamScore = 87, AttendancePercentage = 76, PracticalExamScore = 70},
+            };
+            for (int i = 0; i < grades.Count; i++)
+            {
+                series.Points.Add(new DataPoint(i, (double)grades[i].AttendancePercentage));
+                series.Points.Add(new DataPoint(i, (double)grades[i].TheoreticalExamScore));
+                series.Points.Add(new DataPoint(i, (double)grades[i].PracticalExamScore));
+            }
+
+            model.Series.Add(series);
+            plotView.Model = model;
         }
     }
 }

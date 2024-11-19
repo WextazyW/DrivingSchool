@@ -25,9 +25,17 @@
                 </GridView>
         </ListView.View>
     </ListView>
-    <StackPanel Orientation='Horizontal' Margin="67,611,114,163">
-        <ui:Button Content="Сформировать отчет" Background="White" Height="43"  Click="Button_Click"/>
-        <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+        <ListView x:Name="CategoryList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="679,99,79,244">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding CategoryID}" Width="40" Header="id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Category}" Width="100" Header="Категория"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Width="140" Header="Цена"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Orientation='Horizontal' Margin="67,686,114,88">
+            <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
         </StackPanel>
     </Grid>
 </Page>

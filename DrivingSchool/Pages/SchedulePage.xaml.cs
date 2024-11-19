@@ -24,10 +24,6 @@ namespace DrivingSchool.Pages
         public SchedulePage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             ScheduleList.ItemsSource = ConnectionDB.db.Schedule.ToList();
         }
 

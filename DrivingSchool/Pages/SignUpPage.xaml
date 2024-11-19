@@ -41,5 +41,6 @@
             <ui:Button Content="Зарегистрироваться" FontSize="16px" x:Name="ButtonLogIn" Click="ButtonLogIn_Click" Background="White" Height="46" Margin="0,20,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
         <ui:Image Source="/png/regis.png" Grid.Column="1" Grid.ColumnSpan="2" Margin="300,68,72,142" Grid.RowSpan="4"/>
+        <ui:Button Grid.Column="2" Content="Назад" Background="White" Margin="29,134,0,0" Grid.Row="3" VerticalAlignment="Top" Height="43" Width="100" Click="Button_Click"/>
     </Grid>
 </Page>

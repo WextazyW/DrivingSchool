@@ -26,13 +26,8 @@ namespace DrivingSchool.Pages
         public AnalysisPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
             AnalysisList.ItemsSource = ConnectionDB.db.ResourceUtilization.ToList();
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LIstOfReports());
@@ -69,17 +64,10 @@ namespace DrivingSchool.Pages
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            string filePath = "C:\\Users\\Emil\\Downloads\\file.xlsx";
+            string filePath = "C:\\Users\\Emil\\Downloads\\Otchet.xlsx";
 
-            //try
-            //{
-                ExportToExcel(AnalysisList, filePath);
-                MessageBox.Show("Данные успешно экспортированы в Excel!");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Ошибка при экспорте: {ex.Message}");
-            //}
+            ExportToExcel(AnalysisList, filePath);
+            MessageBox.Show("Данные экспортированы");
         }
     }
 }
