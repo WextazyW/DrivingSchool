@@ -1,41 +1,43 @@
-﻿<Page x:Class="DrivingSchool.Pages.PaymentPage"
+﻿<ui:Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:ui1="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="DrivingSchool.Pages.PaymentPage"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1200"
       Title="PaymentPage">
-    
-    <Grid Background="#0E2039">
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition/>
-    </Grid.ColumnDefinitions>
-    <ListView x:Name="PaymentList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
-        <ListView.View>
-            <GridView>
-                <GridViewColumn DisplayMemberBinding="{Binding PaymentID}" Width="40" Header="id"/>
-                <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="60" Header="Студент"/>
-                <GridViewColumn DisplayMemberBinding="{Binding Amount}" Width="100" Header="Сумма"/>
-                <GridViewColumn DisplayMemberBinding="{Binding PaymentDate}" Width="160" Header="Дата"/>
-                <GridViewColumn DisplayMemberBinding="{Binding PaymentMethod}" Width="160" Header="Способ оплаты"/>
-                <GridViewColumn DisplayMemberBinding="{Binding Discount}" Width="80" Header="Скидка"/>
-                <GridViewColumn DisplayMemberBinding="{Binding Category}" Width="80" Header="Категория"/>
-                </GridView>
-        </ListView.View>
-    </ListView>
-        <ListView x:Name="CategoryList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="679,99,79,244">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding CategoryID}" Width="40" Header="id"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Category}" Width="100" Header="Категория"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Price}" Width="140" Header="Цена"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <StackPanel Orientation='Horizontal' Margin="67,686,114,88">
+
+    <ui:Grid Background="#0E2039">
+        <ui:Grid.ColumnDefinitions>
+            <ui:ColumnDefinition/>
+        </ui:Grid.ColumnDefinitions>
+        <ui:ListView x:Name="PaymentList" ui:ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding PaymentID}" Width="40" Header="id"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding StudentID}" Width="60" Header="Студент"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Amount}" Width="100" Header="Сумма"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding PaymentDate}" Width="160" Header="Дата"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding PaymentMethod}" Width="160" Header="Способ оплаты"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Discount}" Width="80" Header="Скидка"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Category}" Width="80" Header="Категория"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+        <ui:ListView x:Name="CategoryList" ui:ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="679,99,79,244">
+            <ui:ListView.View>
+                <ui:GridView>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding CategoryID}" Width="40" Header="id"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Category}" Width="100" Header="Категория"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Price}" Width="140" Header="Цена"/>
+                </ui:GridView>
+            </ui:ListView.View>
+        </ui:ListView>
+        <ui:StackPanel Orientation='Horizontal' Margin="67,686,114,88">
+            <ui:Button Content="Добавить" Height="44" Background="White" Click="Button_Click"/>
             <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
-        </StackPanel>
-    </Grid>
-</Page>
+        </ui:StackPanel>
+    </ui:Grid>
+</ui:Page>

@@ -16,10 +16,10 @@ namespace DrivingSchool.db
     {
         public int PaymentID { get; set; }
         public Nullable<int> StudentID { get; set; }
-        public Nullable<decimal> Amount { get; set; }
+        public Nullable<int> Amount { get; set; }
         public Nullable<System.DateTime> PaymentDate { get; set; }
         public string PaymentMethod { get; set; }
-        public Nullable<decimal> Discount { get; set; }
+        public Nullable<int> Discount { get; set; }
         public Nullable<int> Category { get; set; }
     
         public virtual DrivingCategories DrivingCategories { get; set; }

@@ -219,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddPayments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddSchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -283,6 +287,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddGroup.xaml.cs">
       <DependentUpon>AddGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddPayments.xaml.cs">
+      <DependentUpon>AddPayments.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddSchedulePage.xaml.cs">
       <DependentUpon>AddSchedulePage.xaml</DependentUpon>
