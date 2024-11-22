@@ -21,11 +21,12 @@ namespace DrivingSchool.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            Students student = ConnectionDB.students;
             txtFName.Text = ConnectionDB.students.FirstName.ToString();
             txtLName.Text = ConnectionDB.students.LastName.ToString();
             txtDateBirth.Text = ConnectionDB.students.DateOfBirth.ToString();
             txtCategory.Text = ConnectionDB.students.DrivingCategory.ToString();
-            txtNotification.Text = ConnectionDB.notifications.Message.ToString();
+            NotificationList.ItemsSource = ConnectionDB.db.Notifications.Where(n => n.StudentID == student.StudentID).ToList();
         }
     }
 }

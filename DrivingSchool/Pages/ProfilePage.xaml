@@ -20,7 +20,7 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.ColumnSpan="2"  Grid.RowSpan="3" Margin="66,73,364,68">
+        <StackPanel Grid.ColumnSpan="2"  Grid.RowSpan="2" Margin="66,73,389,10">
             <ui:Image Source="/png/ava.png" Height="174" Width="176" HorizontalAlignment="Left"/>
             <StackPanel Orientation="Horizontal" Margin="0,40,0,0">
                 <ui:TextBlock Text="Фамилия:" Foreground="White" FontSize="20" VerticalAlignment="Center" Height="30"/>
@@ -35,14 +35,6 @@
                 <ui:TextBlock x:Name="txtDateBirth" FontSize="20" TextWrapping="Wrap" Margin="32,0,0,0" Text="" Height="30" Width="130" Foreground="White"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <ui:TextBlock Text="Дата начала:" Foreground="White" FontSize="20" Height="30"/>
-                <ui:TextBlock x:Name="txtDateStart" Text="" Foreground="White" Margin="62,0,0,0" FontSize="20" Height="30" Width="100"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
-                <ui:TextBlock Text="Дата окончания:" Foreground="White" FontSize="20" Height="30"/>
-                <ui:TextBlock x:Name="txtDateEnd" FontSize="20" TextWrapping="Wrap" Text="" Margin="26,0,0,0" Height="30" Width="130" Foreground="White"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <ui:TextBlock Text="Категория:" Foreground="White" FontSize="20" Height="30"/>
                 <ui:TextBlock x:Name="txtCategory" Text="" Margin="82,0,0,0" Foreground="White" FontSize="20" Height="34" Width="95" RenderTransformOrigin="0.522,0.629"/>
             </StackPanel>
@@ -51,5 +43,15 @@
                 <ui:TextBlock x:Name="txtNotification" Text="" Margin="52,0,0,0" Foreground="White" FontSize="20" Height="34" Width="289" RenderTransformOrigin="0.522,0.629"/>
             </StackPanel>
         </StackPanel>
+        <ListView x:Name="NotificationList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="114,234,0,87" Grid.Column="1" Grid.RowSpan="2" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding NotificationID}" Width="40" Header="id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding StudentID}" Width="40" Header="Студент"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Message}" Width="180" Header="Сообщение"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding DateSent}" Width="160" Header="Дата"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

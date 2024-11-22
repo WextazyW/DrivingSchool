@@ -36,5 +36,31 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new LIstOfReports());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (StudentList.SelectedItem != null)
+            {
+                Students student = StudentList.SelectedItem as Students;
+                if (cmbx.Text == "Фамилия")
+                {
+                    student.FirstName = txtBox.Text;
+                }
+                if (cmbx.Text == "Имя")
+                {
+                    student.LastName = txtBox.Text;
+                }
+                if (cmbx.Text == "Дата рождения")
+                {
+                    student.DateOfBirth = DateTime.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Категория")
+                {
+                    student.DrivingCategory = txtBox.Text;
+                }
+                ConnectionDB.db.SaveChanges();
+                StudentList.ItemsSource = ConnectionDB.db.Students.ToList();
+            }
+        }
     }
 }

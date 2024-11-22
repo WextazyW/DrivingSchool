@@ -12,13 +12,15 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Notifications
+    public partial class Schedule2C
     {
-        public int NotificationID { get; set; }
-        public Nullable<int> StudentID { get; set; }
-        public string Message { get; set; }
-        public Nullable<System.DateTime> DateSent { get; set; }
+        public int id { get; set; }
+        public Nullable<int> studentId { get; set; }
+        public Nullable<int> instructorId { get; set; }
+        public Nullable<System.DateTime> StartTime { get; set; }
+        public Nullable<System.DateTime> EndTime { get; set; }
     
+        public virtual Instructors Instructors { get; set; }
         public virtual Students Students { get; set; }
     }
 }

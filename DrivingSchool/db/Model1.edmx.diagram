@@ -5,26 +5,27 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="bbdd50b1050147bf9b687d59ebab9c50" Name="Diagram1" ZoomLevel="80">
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Cars" Width="1.5" PointX="8.25" PointY="19.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Cars" Width="1.5" PointX="8.25" PointY="22" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Courses" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Discounts" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.DrivingCategories" Width="1.5" PointX="3" PointY="7.875" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Exams" Width="1.5" PointX="3" PointY="15.875" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Feedback" Width="1.5" PointX="8.25" PointY="11.5" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Grades" Width="1.5" PointX="5.25" PointY="26.375" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Groups" Width="1.5" PointX="6" PointY="3.875" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Instructors" Width="1.5" PointX="6" PointY="19.375" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.MaintenanceHistory" Width="1.5" PointX="10.5" PointY="19.625" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Notifications" Width="1.5" PointX="5.25" PointY="29.5" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Payments" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.DrivingCategories" Width="1.5" PointX="3" PointY="17.375" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Exams" Width="1.5" PointX="6" PointY="6.375" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Feedback" Width="1.5" PointX="8.25" PointY="17" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Grades" Width="1.5" PointX="5.25" PointY="34" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Groups" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Instructors" Width="1.5" PointX="6" PointY="21.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.MaintenanceHistory" Width="1.5" PointX="10.5" PointY="22.125" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Notifications" Width="1.5" PointX="5.25" PointY="18.625" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Payments" Width="1.5" PointX="5.25" PointY="12.875" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.Reports" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.ResourceUtilization" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Results" Width="1.5" PointX="5.25" PointY="11.5" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Schedule" Width="1.5" PointX="5.25" PointY="15.5" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.Students" Width="1.5" PointX="3" PointY="10.625" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.StudentsGroups" Width="1.5" PointX="8.25" PointY="7.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Results" Width="1.5" PointX="8.25" PointY="9" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Schedule" Width="1.5" PointX="8.25" PointY="13" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Schedule2C" Width="1.5" PointX="11.25" PointY="13" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.Students" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.StudentsGroups" Width="1.5" PointX="5.25" PointY="9" />
         <EntityTypeShape EntityType="DrivingSchoolDBModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DrivingSchoolDBModel.users" Width="1.5" PointX="0.75" PointY="11.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBModel.users" Width="1.5" PointX="0.75" PointY="13.375" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Maintenan__Vehic__49C3F6B7" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Vehicles__Instru__4F7CD00D" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_Payments_DrivingCategories" />
@@ -34,10 +35,12 @@
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Grades__StudentI__440B1D61" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_StudentsGroups_Groups" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Schedule__Instru__4E88ABD4" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK_Schedule2_Instructors" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Notificat__Stude__45F365D3" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Payments__Studen__47DBAE45" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK__Results__Student__2BFE89A6" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_Schedule_Students" />
+        <AssociationConnector Association="DrivingSchoolDBModel.FK_Schedule2_Students" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_Students_users" />
         <AssociationConnector Association="DrivingSchoolDBModel.FK_StudentsGroups_Students" />
       </Diagram>

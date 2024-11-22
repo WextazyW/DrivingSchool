@@ -199,6 +199,9 @@
     <Compile Include="db\Schedule.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="db\Schedule2C.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="db\Students.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -215,11 +218,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddGrades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddInstructor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddPayments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddSchedule2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -275,6 +294,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Schedule2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SchedulePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -285,11 +308,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddCar.xaml.cs">
+      <DependentUpon>AddCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddGrades.xaml.cs">
+      <DependentUpon>AddGrades.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddGroup.xaml.cs">
       <DependentUpon>AddGroup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddInstructor.xaml.cs">
+      <DependentUpon>AddInstructor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddPayments.xaml.cs">
       <DependentUpon>AddPayments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddSchedule2.xaml.cs">
+      <DependentUpon>AddSchedule2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddSchedulePage.xaml.cs">
       <DependentUpon>AddSchedulePage.xaml</DependentUpon>
@@ -329,6 +364,9 @@
     </Compile>
     <Compile Include="Pages\ResultPage.xaml.cs">
       <DependentUpon>ResultPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Schedule2.xaml.cs">
+      <DependentUpon>Schedule2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SchedulePage.xaml.cs">
       <DependentUpon>SchedulePage.xaml</DependentUpon>

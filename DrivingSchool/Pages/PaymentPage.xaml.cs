@@ -37,5 +37,39 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new AddPayments());
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (PaymentList.SelectedItem != null)
+            {
+                Payments student = PaymentList.SelectedItem as Payments;
+                if (cmbx.Text == "Студент")
+                {
+                    student.StudentID = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Цена")
+                {
+                    student.Amount = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Дата")
+                {
+                    student.PaymentDate = DateTime.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Метод")
+                {
+                    student.PaymentMethod = txtBox.Text;
+                }
+                if (cmbx.Text == "Скидка")
+                {
+                    student.Discount = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Категория")
+                {
+                    student.Category = Convert.ToInt32(txtBox.Text);
+                }
+                ConnectionDB.db.SaveChanges();
+                PaymentList.ItemsSource = ConnectionDB.db.Payments.ToList();
+            }
+        }
     }
 }

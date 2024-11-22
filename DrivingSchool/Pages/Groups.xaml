@@ -29,7 +29,7 @@
                 <ui:GridView>
                     <ui:GridViewColumn DisplayMemberBinding="{ui:Binding GroupId}" Width="40" Header="id"/>
                     <ui:GridViewColumn DisplayMemberBinding="{ui:Binding Category}" Width="90" Header="Категория"/>
-                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding CountHumans}" Width="80" Header="Баллы"/>
+                    <ui:GridViewColumn DisplayMemberBinding="{ui:Binding CountHumans}" Width="80" Header="Количество"/>
                 </ui:GridView>
             </ui:ListView.View>
         </ui:ListView>

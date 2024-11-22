@@ -1,0 +1,36 @@
+﻿<Page x:Class="DrivingSchool.Pages.AddGrades"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1200"
+      Title="AddGrades">
+
+    <Grid Background="#0E2039">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="341*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="106,156,393,212" Grid.RowSpan="4" Grid.ColumnSpan="2">
+            <ui:TextBlock Text="Студент" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ComboBox Name="cmbx" Grid.Column="1" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <ui:TextBlock Text="Посещаемость" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtPoseshaem" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Оценки теории" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtTeoriya" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:TextBlock Text="Оценки практики" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
+            <ui:TextBox FontSize="20px" x:Name="txtPraktika" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:Button Content="Создать" Width="100" Height="40" Background="White" HorizontalAlignment="Center" Margin="0,20,0,0" Click="Button_Click"/>
+        </StackPanel>
+        <ui:Button Content="Назад" Height="50" Width="100" Grid.Column="1" Margin="546,0,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Click="Button_Click_1"/>
+    </Grid>
+</Page>

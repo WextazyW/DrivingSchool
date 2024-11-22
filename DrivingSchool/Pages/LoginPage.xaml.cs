@@ -45,13 +45,13 @@ namespace DrivingSchool.Pages
                 var student = ConnectionDB.db.Students.FirstOrDefault(log => log.login == login && log.password == password);
                 if (student != null)
                 {
-                    var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
-                    if(notification != null)
-                    {
-                        ConnectionDB.notifications = notification;
+                    //var notification = ConnectionDB.db.Notifications.FirstOrDefault(n => n.StudentID == student.StudentID);
+                    //if(notification != null)
+                    //{
+                        //ConnectionDB.notifications = notification;
                         ConnectionDB.students = student;
                         _mainWindow.MainFrame.NavigationService.Navigate(new ProfilePage());
-                    }
+                    //}
                 }
                 else
                 {

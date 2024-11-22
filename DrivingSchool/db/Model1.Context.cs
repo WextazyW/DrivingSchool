@@ -41,6 +41,7 @@ namespace DrivingSchool.db
         public virtual DbSet<ResourceUtilization> ResourceUtilization { get; set; }
         public virtual DbSet<Results> Results { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }
+        public virtual DbSet<Schedule2C> Schedule2C { get; set; }
         public virtual DbSet<Students> Students { get; set; }
         public virtual DbSet<StudentsGroups> StudentsGroups { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }

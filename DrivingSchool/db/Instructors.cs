@@ -20,6 +20,7 @@ namespace DrivingSchool.db
             this.Cars = new HashSet<Cars>();
             this.Feedback = new HashSet<Feedback>();
             this.Schedule = new HashSet<Schedule>();
+            this.Schedule2C = new HashSet<Schedule2C>();
         }
     
         public int InstructorID { get; set; }
@@ -35,5 +36,7 @@ namespace DrivingSchool.db
         public virtual ICollection<Feedback> Feedback { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Schedule2C> Schedule2C { get; set; }
     }
 }

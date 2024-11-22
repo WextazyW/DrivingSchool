@@ -69,5 +69,10 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new Groups());
         }
+
+        private void SchedulePage2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Schedule2());
+        }
     }
 }

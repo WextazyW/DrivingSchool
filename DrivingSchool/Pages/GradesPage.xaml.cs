@@ -59,5 +59,36 @@ namespace DrivingSchool.Pages
             model.Series.Add(series);
             plotView.Model = model;
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddGrades());
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (GradesList.SelectedItem != null)
+            {
+                Grades student = GradesList.SelectedItem as Grades;
+                if (cmbx.Text == "Студент")
+                {
+                    student.StudentID = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Посещаемость")
+                {
+                    student.AttendancePercentage = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Теория")
+                {
+                    student.TheoreticalExamScore = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Практика")
+                {
+                    student.PracticalExamScore = Convert.ToInt32(txtBox.Text);
+                }
+                ConnectionDB.db.SaveChanges();
+                GradesList.ItemsSource = ConnectionDB.db.Grades.ToList();
+            }
+        }
     }
 }
