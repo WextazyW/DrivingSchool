@@ -31,7 +31,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Vertical" Height="154" Grid.Column="1" Grid.ColumnSpan="2" Margin="450,240,150,32" Grid.Row="1">
+        <StackPanel Orientation="Vertical" Grid.Column="1" Grid.ColumnSpan="2" Margin="450,120,150,112" Grid.Row="1">
             <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="120" Background="White" Margin="0,0,0,0">
                 <ComboBoxItem Content="Студент"/>
                 <ComboBoxItem Content="Посещаемость"/>

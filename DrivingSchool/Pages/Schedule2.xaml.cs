@@ -16,9 +16,6 @@ using DrivingSchool.db;
 
 namespace DrivingSchool.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Schedule2.xaml
-    /// </summary>
     public partial class Schedule2 : Page
     {
         public Schedule2()
