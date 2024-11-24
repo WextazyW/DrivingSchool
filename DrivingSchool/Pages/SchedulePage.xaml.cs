@@ -66,5 +66,13 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new LIstOfReports());
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Schedule kaktusi = ScheduleList.SelectedItem as Schedule;
+            ConnectionDB.db.Schedule.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            ScheduleList.ItemsSource = ConnectionDB.db.Schedule.ToList();
+        }
     }
 }

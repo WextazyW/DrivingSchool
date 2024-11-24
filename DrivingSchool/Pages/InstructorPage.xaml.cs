@@ -71,5 +71,13 @@ namespace DrivingSchool.Pages
                 InstructorList.ItemsSource = ConnectionDB.db.Instructors.ToList();
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Instructors kaktusi = InstructorList.SelectedItem as Instructors;
+            ConnectionDB.db.Instructors.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            InstructorList.ItemsSource = ConnectionDB.db.Instructors.ToList();
+        }
     }
 }

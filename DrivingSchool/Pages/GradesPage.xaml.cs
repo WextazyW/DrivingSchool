@@ -90,5 +90,13 @@ namespace DrivingSchool.Pages
                 GradesList.ItemsSource = ConnectionDB.db.Grades.ToList();
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Grades kaktusi = GradesList.SelectedItem as Grades;
+            ConnectionDB.db.Grades.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            GradesList.ItemsSource = ConnectionDB.db.Grades.ToList();
+        }
     }
 }

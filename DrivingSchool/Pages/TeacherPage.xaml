@@ -1,41 +1,38 @@
-﻿<Page x:Class="DrivingSchool.Pages.InstructorPage"
+﻿<Page x:Class="DrivingSchool.Pages.TeacherPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1200"
-      Title="InstructorPage">
+      Title="TeacherPage">
 
     <Grid Background="#0E2039">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <ListView x:Name="InstructorList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
+        <ListView x:Name="TeacherList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding InstructorID}" Width="40" Header="id"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}" Width="100" Header="Имя"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding LastName}" Width="70" Header="Фамилия"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Rating}" Width="100" Header="Рейтинг"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Email}" Width="140" Header="Email"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="120" Header="Телефон"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding TeacherId}" Width="40" Header="id"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding GroupId}" Width="100" Header="Группа"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding FName}" Width="70" Header="Фамилия"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding LName}" Width="100" Header="Имя"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}" Width="140" Header="Телефон"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Orientation='Horizontal' Margin="67,611,112,163">
-            <ui:Button Content="Отзывы" Height="43" Margin="100,0,0,0" Click="Button_Click_2"/>
-            <ui:Button Content="Удалить" Margin="300,0,0,0" Height="43" Background="White" Click="Button_Click_4"/>
-            <ui:Button Content="Назад" Height="44" Width="100" Margin="350,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Удалить" Height="44" Margin="600,0,0,0" Background="White" Click="Button_Click_4"/>
+            <ui:Button Content="Назад" Height="44" Background="White" Width="100" Margin="150,0,0,0" Click="Button_Click_1"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" Margin="891,379,112,244">
             <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="120" Background="White" Margin="0,0,0,0">
+                <ComboBoxItem Content="Группа"/>
                 <ComboBoxItem Content="Фамилия"/>
                 <ComboBoxItem Content="Имя"/>
-                <ComboBoxItem Content="Рейтинг"/>
-                <ComboBoxItem Content="Емайл"/>
                 <ComboBoxItem Content="Телефон"/>
             </ComboBox>
             <ui:Button Content="Редактировать" HorizontalAlignment="Center" Margin="0,10,0,0" Background="White" Height="50" Click="Button_Click_3"/>

@@ -24,19 +24,20 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Vertical" Height="154" Margin="469,567,581,129">
-            <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="120" Background="White" Margin="0,0,0,0">
+        <StackPanel Orientation="Horizontal" Height="154" Margin="298,567,471,129">
+            <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="150" Background="White">
                 <ComboBoxItem Content="Номер"/>
                 <ComboBoxItem Content="Статус"/>
                 <ComboBoxItem Content="Инструктор"/>
                 <ComboBoxItem Content="Модель"/>
                 <ComboBoxItem Content="Год"/>
             </ComboBox>
-            <ui:Button Content="Редактировать" HorizontalAlignment="Center" Margin="0,10,0,0" Background="White" Height="50" Click="Button_Click_3"/>
-            <ui:TextBox Name="txtBox" Background="White" Margin="0,10,0,0" Width="95"/>
+            <ui:Button Content="Редактировать" HorizontalAlignment="Center" Background="White" Height="50" Click="Button_Click_3"/>
+            <ui:TextBox Name="txtBox" Background="White" Margin="30,0,0,0" Height="32" Width="70"/>
         </StackPanel>
         <StackPanel Orientation='Horizontal' Margin="67,611,79,163">
-            <ui:Button Content="Назад" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Назад" Height="44" Background="White" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Удалить" Margin="60,0,0,0" Height="43" Background="White" Click="Button_Click_4"/>
         </StackPanel>
         <ui:Button Content="Добавить" Background="White"  Margin="164,621,0,0" VerticalAlignment="Top" Height="46" Width="106" Click="Button_Click_2"/>
     </Grid>

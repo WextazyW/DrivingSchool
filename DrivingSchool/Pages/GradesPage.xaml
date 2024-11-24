@@ -41,6 +41,7 @@
             <ui:Button Content="Редактировать" HorizontalAlignment="Center" Margin="0,10,0,0" Background="White" Height="50" Click="Button_Click_3"/>
             <ui:TextBox Name="txtBox" Background="White" Margin="0,10,0,0" Width="95"/>
         </StackPanel>
+        <ui:Button Content="Удалить" Height="43" Margin="352,2,0,0" Background="White" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Click="Button_Click_4"/>
         <oxy:PlotView x:Name="plotView" Grid.ColumnSpan="2" Margin="120,102,270,212" Grid.Row="1" Grid.RowSpan="2" />
         <ui:Button Content="Сформировать отчет" Grid.Column="1" Background="White"  Grid.Row="2" VerticalAlignment="Top" Height="46" Width="164" Click="Button_Click"/>
         <ui:Button Content="Добавить" Background="White" Grid.Row="2" VerticalAlignment="Top" Height="46" Width="106" Grid.ColumnSpan="2" Click="Button_Click_2"/>

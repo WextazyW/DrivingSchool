@@ -32,5 +32,44 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new LIstOfReports());
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (ResultList.SelectedItem != null)
+            {
+                Results student = ResultList.SelectedItem as Results;
+                if (cmbx.Text == "Экзамен")
+                {
+                    student.ExamID = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Студент")
+                {
+                    student.StudentID = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Баллы")
+                {
+                    student.Score = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Результат")
+                {
+                    student.ResultID = Convert.ToInt32(txtBox.Text);
+                }
+                ConnectionDB.db.SaveChanges();
+                ResultList.ItemsSource = ConnectionDB.db.Results.ToList();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddExamResult());
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Results kaktusi = ResultList.SelectedItem as Results;
+            ConnectionDB.db.Results.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            ResultList.ItemsSource = ConnectionDB.db.Results.ToList();
+        }
     }
 }

@@ -71,5 +71,13 @@ namespace DrivingSchool.Pages
                 PaymentList.ItemsSource = ConnectionDB.db.Payments.ToList();
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Payments kaktusi = PaymentList.SelectedItem as Payments;
+            ConnectionDB.db.Payments.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            PaymentList.ItemsSource = ConnectionDB.db.Payments.ToList();
+        }
     }
 }

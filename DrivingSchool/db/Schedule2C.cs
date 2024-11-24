@@ -16,11 +16,11 @@ namespace DrivingSchool.db
     {
         public int id { get; set; }
         public Nullable<int> studentId { get; set; }
-        public Nullable<int> instructorId { get; set; }
+        public Nullable<int> teacherId { get; set; }
         public Nullable<System.DateTime> StartTime { get; set; }
         public Nullable<System.DateTime> EndTime { get; set; }
     
-        public virtual Instructors Instructors { get; set; }
         public virtual Students Students { get; set; }
+        public virtual Teacher Teacher { get; set; }
     }
 }

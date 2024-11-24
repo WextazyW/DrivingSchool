@@ -13,10 +13,10 @@ namespace DrivingSchool.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrivingSchoolDBEntities1 : DbContext
+    public partial class DrivingSchoolDBEntities2 : DbContext
     {
-        public DrivingSchoolDBEntities1()
-            : base("name=DrivingSchoolDBEntities1")
+        public DrivingSchoolDBEntities2()
+            : base("name=DrivingSchoolDBEntities2")
         {
         }
     
@@ -45,6 +45,7 @@ namespace DrivingSchool.db
         public virtual DbSet<Students> Students { get; set; }
         public virtual DbSet<StudentsGroups> StudentsGroups { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Teacher> Teacher { get; set; }
         public virtual DbSet<users> users { get; set; }
     }
 }

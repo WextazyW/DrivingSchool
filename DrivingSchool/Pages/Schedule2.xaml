@@ -14,26 +14,26 @@
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding id}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding studentId}" Width="80" Header="Студент"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding instructorId}" Width="70" Header="Инструктор"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding teacherId}" Width="70" Header="Учитель"/>
                     <GridViewColumn DisplayMemberBinding="{Binding StartTime}" Width="180" Header="Дата начала"/>
                     <GridViewColumn DisplayMemberBinding="{Binding EndTime}" Width="180" Header="Дата окончания"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Horizontal" Margin="49,401,244,235">
+        <StackPanel Orientation="Horizontal" Margin="54,535,239,101">
             <ui:Button Content="Добавить расписание" Background="White" Margin="60,0,0,0" Height="50" Click="Button_Click_1"/>
             <ui:Button Content="Редактировать" Background="White" Margin="60,0,0,0" Height="50" Click="Button_Click_2"/>
             <StackPanel Orientation="Vertical" Height="154">
                 <ComboBox Name="cmbx" Width="120" Background="White" Margin="30,0,0,0">
                     <ComboBoxItem Content="Студент"/>
-                    <ComboBoxItem Content="Инструктор"/>
+                    <ComboBoxItem Content="Учитель"/>
                     <ComboBoxItem Content="Начало"/>
                     <ComboBoxItem Content="Конец"/>
-                    <ComboBoxItem Content="Результат"/>
                 </ComboBox>
                 <ui:TextBox Name="txtBox" Background="White" Margin="30,70,0,0" />
             </StackPanel>
             <ui:Button Content="Назад" Margin="50,0,0,0" Background="White" Height="50" Width="100" Click="Button_Click_3"/>
+            <ui:Button Content="Удалить" Height="43" Background="White" Margin="50,0,0,0" Grid.Column="1" Grid.Row="2" Click="Button_Click_4"/>
         </StackPanel>
     </Grid>
 </Page>

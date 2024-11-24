@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace DrivingSchool.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для LIstOfReports.xaml
-    /// </summary>
     public partial class LIstOfReports : Page
     {
         public LIstOfReports()
@@ -73,6 +70,11 @@ namespace DrivingSchool.Pages
         private void SchedulePage2_MouseDown(object sender, MouseButtonEventArgs e)
         {
             NavigationService.Navigate(new Schedule2());
+        }
+
+        private void teacherPage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new TeacherPage());
         }
     }
 }

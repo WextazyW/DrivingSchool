@@ -12,28 +12,22 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class Instructors
+    public partial class Teacher
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Instructors()
+        public Teacher()
         {
-            this.Cars = new HashSet<Cars>();
-            this.Feedback = new HashSet<Feedback>();
-            this.Schedule = new HashSet<Schedule>();
+            this.Schedule2C = new HashSet<Schedule2C>();
         }
     
-        public int InstructorID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Nullable<double> Rating { get; set; }
-        public string Email { get; set; }
+        public int TeacherId { get; set; }
+        public Nullable<int> GroupId { get; set; }
+        public string FName { get; set; }
+        public string LName { get; set; }
         public string Phone { get; set; }
     
+        public virtual Groups Groups { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cars> Cars { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedback { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Schedule> Schedule { get; set; }
+        public virtual ICollection<Schedule2C> Schedule2C { get; set; }
     }
 }

@@ -63,5 +63,13 @@ namespace DrivingSchool.Pages
                 CarList.ItemsSource = ConnectionDB.db.Cars.ToList();
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Cars kaktusi = CarList.SelectedItem as Cars;
+            ConnectionDB.db.Cars.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            CarList.ItemsSource = ConnectionDB.db.Cars.ToList();
+        }
     }
 }

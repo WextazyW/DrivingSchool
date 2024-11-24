@@ -33,9 +33,9 @@ namespace DrivingSchool.Pages
             string startDate = txtStartTime.Text;
             string endDate = txtEndTime.Text;
 
-            var schedule = ConnectionDB.db.Schedule.AsEnumerable().FirstOrDefault(s =>
-                s.StudentID.ToString() == studentId
-                && s.InstructorID.ToString() == instructorId
+            var schedule = ConnectionDB.db.Schedule2C.AsEnumerable().FirstOrDefault(s =>
+                s.studentId.ToString() == studentId
+                && s.teacherId.ToString() == instructorId
                 && s.StartTime == DateTime.Parse(startDate)
                 && s.EndTime == DateTime.Parse(endDate)
             );
@@ -43,7 +43,7 @@ namespace DrivingSchool.Pages
             var tempSchedule = new Schedule2C()
             {
                 studentId = Convert.ToInt32(studentId),
-                instructorId = Convert.ToInt32(instructorId),
+                teacherId = Convert.ToInt32(instructorId),
                 StartTime = DateTime.Parse(startDate),
                 EndTime = DateTime.Parse(endDate),
             };

@@ -37,5 +37,39 @@ namespace DrivingSchool.Pages
         {
             NavigationService.Navigate(new AddGroup());
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (StudentGroupList.SelectedItem != null)
+            {
+                StudentsGroups student = StudentGroupList.SelectedItem as StudentsGroups;
+                if (cmbx.Text == "Студент")
+                {
+                    student.StudentId = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Группа")
+                {
+                    student.GroupId = Convert.ToInt32(txtBox.Text);
+                }
+                if (cmbx.Text == "Дата начала")
+                {
+                    student.StartDate = DateTime.Parse(txtBox.Text);
+                }
+                if (cmbx.Text == "Дата окончания")
+                {
+                    student.EndDate = DateTime.Parse(txtBox.Text);
+                }
+                ConnectionDB.db.SaveChanges();
+                StudentGroupList.ItemsSource = ConnectionDB.db.StudentsGroups.ToList();
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            StudentsGroups kaktusi = StudentGroupList.SelectedItem as StudentsGroups;
+            ConnectionDB.db.StudentsGroups.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            StudentGroupList.ItemsSource = ConnectionDB.db.StudentsGroups.ToList();
+        }
     }
 }

@@ -62,5 +62,13 @@ namespace DrivingSchool.Pages
                 StudentList.ItemsSource = ConnectionDB.db.Students.ToList();
             }
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Students student = StudentList.SelectedItem as Students;
+            ConnectionDB.db.Students.Remove(student);
+            ConnectionDB.db.SaveChanges();
+            StudentList.ItemsSource = ConnectionDB.db.Students.ToList();
+        }
     }
 }

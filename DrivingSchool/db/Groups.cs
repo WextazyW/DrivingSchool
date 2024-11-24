@@ -18,6 +18,7 @@ namespace DrivingSchool.db
         public Groups()
         {
             this.StudentsGroups = new HashSet<StudentsGroups>();
+            this.Teacher = new HashSet<Teacher>();
         }
     
         public int GroupId { get; set; }
@@ -26,5 +27,7 @@ namespace DrivingSchool.db
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentsGroups> StudentsGroups { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Teacher> Teacher { get; set; }
     }
 }

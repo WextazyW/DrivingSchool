@@ -26,8 +26,8 @@
                 </ui:GridView>
             </ui:ListView.View>
         </ui:ListView>
-        <StackPanel Orientation="Vertical" Height="154" Margin="469,567,581,129">
-            <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="120" Background="White" Margin="0,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="289,660,378,62">
+            <ComboBox Name="cmbx" Width="120" Background="White">
                 <ComboBoxItem Content="Студент"/>
                 <ComboBoxItem Content="Цена"/>
                 <ComboBoxItem Content="Дата"/>
@@ -35,8 +35,8 @@
                 <ComboBoxItem Content="Скидка"/>
                 <ComboBoxItem Content="Категория"/>
             </ComboBox>
-            <ui:Button Content="Редактировать" HorizontalAlignment="Center" Margin="0,10,0,0" Background="White" Height="50" Click="Button_Click_3"/>
-            <ui:TextBox Name="txtBox" Background="White" Margin="0,10,0,0" Width="95"/>
+            <ui:Button Content="Редактировать" Margin="40,0,0,0" Background="White" Height="50" Click="Button_Click_3"/>
+            <ui:TextBox Name="txtBox" Background="White" Margin="50,0,0,0" Width="95" Height="50"/>
         </StackPanel>
         <ui:ListView x:Name="CategoryList" ui:ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White" Margin="679,99,79,244">
             <ui:ListView.View>
@@ -49,7 +49,8 @@
         </ui:ListView>
         <ui:StackPanel Orientation='Horizontal' Margin="67,686,114,88">
             <ui:Button Content="Добавить" Height="44" Background="White" Click="Button_Click"/>
-            <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Удалить" Height="43" Margin="600,0,0,0" Background="White" Grid.Column="1" Grid.Row="2" Click="Button_Click_4"/>
+            <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="100,0,0,0" Click="Button_Click_1"/>
         </ui:StackPanel>
     </ui:Grid>
 </ui:Page>

@@ -27,8 +27,8 @@ namespace DrivingSchool.db
         public string Model { get; set; }
         public Nullable<int> Year { get; set; }
     
+        public virtual Instructors Instructors { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MaintenanceHistory> MaintenanceHistory { get; set; }
-        public virtual Instructors Instructors { get; set; }
     }
 }

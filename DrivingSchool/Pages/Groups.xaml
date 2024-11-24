@@ -33,9 +33,20 @@
                 </ui:GridView>
             </ui:ListView.View>
         </ui:ListView>
+        <StackPanel Orientation="Horizontal" Margin="304,678,304,44">
+            <ComboBox Name="cmbx" Width="120" Background="White">
+                <ComboBoxItem Content="Студент"/>
+                <ComboBoxItem Content="Группа"/>
+                <ComboBoxItem Content="Дата начала"/>
+                <ComboBoxItem Content="Дата конца"/>
+            </ComboBox>
+            <ui:Button Content="Редактировать" Margin="40,0,0,0" Background="White" Height="50" Click="Button_Click_3"/>
+            <ui:TextBox Name="txtBox" Background="White" Margin="50,0,0,0" Width="95" Height="39"/>
+            <ui:Button Content="Удалить" Height="43" Margin="50,0,0,0" Background="White" Grid.Column="1" Grid.Row="2" Click="Button_Click_4"/>
+        </StackPanel>
         <ui:StackPanel Orientation='Horizontal' Margin="73,701,73,73">
-            <ui:Button Content="Добавить" Click="Button_Click"/>
-            <ui:Button Content="Назад" Height="44" Width="100" Margin="700,0,0,0" Click="Button_Click_1"/>
+            <ui:Button Content="Добавить" Background="White" Click="Button_Click"/>
+            <ui:Button Content="Назад" Height="44" Width="100" Background="White" Margin="800,0,0,0" Click="Button_Click_1"/>
         </ui:StackPanel>
     </ui:Grid>
 </ui:Page>
