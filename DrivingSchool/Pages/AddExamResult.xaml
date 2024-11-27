@@ -22,9 +22,9 @@
         </Grid.ColumnDefinitions>
         <StackPanel Margin="91,189,425,188" Grid.RowSpan="4" Grid.ColumnSpan="2">
             <ui:TextBlock Text="Экзамен" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtExam" CaretBrush="Gray" Margin="0,10,0,0" />
+            <ComboBox Name="cmbx1" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Студент" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtStudent" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
+            <ComboBox Name="cmbx" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Баллы" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtScore" CaretBrush="Gray" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Результат" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>

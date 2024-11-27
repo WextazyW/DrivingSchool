@@ -24,13 +24,15 @@ namespace DrivingSchool.Pages
         public AddCar()
         {
             InitializeComponent();
+            var car = ConnectionDB.db.Cars.ToList();
+            cmbx.ItemsSource = car.Select(x => x.InstructorID);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string nomer = txtNomer.Text;
             string status = txtStatus.Text;
-            string instructorId = txtInstructorId.Text;
+            string instructorId = cmbx.Text;
             string model = txtModel.Text;
             string year = txtYear.Text;
 

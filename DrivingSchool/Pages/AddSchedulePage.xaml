@@ -22,9 +22,9 @@
         </Grid.ColumnDefinitions>
         <StackPanel Margin="92,124,399,135" ui:Grid.RowSpan="4" Grid.ColumnSpan="2">
             <ui:TextBlock Text="Студент" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtStudentId" CaretBrush="Gray" Margin="0,10,0,0" />
+            <ComboBox Name="cmbx" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Инструктор" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtInstructorId" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
+            <ComboBox Name="cmbx1" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Дата начала" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtStartTime" CaretBrush="Gray" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Дата окончания" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>

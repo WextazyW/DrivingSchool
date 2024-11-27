@@ -26,7 +26,6 @@ namespace DrivingSchool.Pages
             InitializeComponent();
             var students = ConnectionDB.db.Students.ToList();
             cmbx.ItemsSource = students.Select(x => x.StudentID);
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

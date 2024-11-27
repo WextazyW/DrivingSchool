@@ -26,11 +26,13 @@ namespace DrivingSchool.Pages
         public AddPayments()
         {
             InitializeComponent();
+            var students = ConnectionDB.db.Students.ToList();
+            cmbx.ItemsSource = students.Select(x => x.StudentID);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string studentId = txtStudentId.Text;
+            string studentId = cmbx.Text;
             string amount = txtAmount.Text;
             string date = txtDate.Text;
             string metod = txtMetod.Text;

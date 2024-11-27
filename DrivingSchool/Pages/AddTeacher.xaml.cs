@@ -24,11 +24,13 @@ namespace DrivingSchool.Pages
         public AddTeacher()
         {
             InitializeComponent();
+            var group = ConnectionDB.db.Groups.ToList();
+            cmbx.ItemsSource = group.Select(x => x.GroupId);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string groupid = txtGroup.Text;
+            string groupid = cmbx.Text;
             string fname = txtFName.Text;
             string lname = txtLName.Text;
             string phone = txtPhone.Text;

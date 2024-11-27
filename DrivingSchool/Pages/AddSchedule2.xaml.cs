@@ -24,12 +24,16 @@ namespace DrivingSchool.Pages
         public AddSchedule2()
         {
             InitializeComponent();
+            var students = ConnectionDB.db.Students.ToList();
+            cmbx.ItemsSource = students.Select(x => x.StudentID);
+            var instructor = ConnectionDB.db.Instructors.ToList();
+            cmbx1.ItemsSource = instructor.Select(x => x.InstructorID);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string studentId = txtStudentId.Text;
-            string instructorId = txtInstructorId.Text;
+            string studentId = cmbx.Text;
+            string instructorId = cmbx1.Text;
             string startDate = txtStartTime.Text;
             string endDate = txtEndTime.Text;
 

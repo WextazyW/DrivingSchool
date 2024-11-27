@@ -24,6 +24,10 @@ namespace DrivingSchool.Pages
         public AddExamResult()
         {
             InitializeComponent();
+            var student = ConnectionDB.db.Students.ToList();
+            cmbx.ItemsSource = student.Select(x => x.StudentID);
+            var exam = ConnectionDB.db.Exams.ToList();
+            cmbx1.ItemsSource = exam.Select(x => x.ExamID);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -33,8 +37,8 @@ namespace DrivingSchool.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string exam = txtExam.Text;
-            string student = txtStudent.Text;
+            string exam = cmbx1.Text;
+            string student = cmbx.Text;
             string score = txtScore.Text;
             string passed = txtResult.Text;
 

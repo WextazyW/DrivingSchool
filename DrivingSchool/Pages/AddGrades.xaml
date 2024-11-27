@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
         <StackPanel Margin="106,156,393,212" Grid.RowSpan="4" Grid.ColumnSpan="2">
             <ui:TextBlock Text="Студент" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ComboBox Name="cmbx" Grid.Column="1" HorizontalAlignment="Left" Grid.RowSpan="2"/>
+            <ComboBox Name="cmbx" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Посещаемость" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtPoseshaem" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Оценки теории" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>

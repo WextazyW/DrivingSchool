@@ -26,7 +26,7 @@
             <ui:TextBlock Text="Статус" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtStatus" CaretBrush="Black" BorderBrush="{x:Null}" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Инструктор" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtInstructorId" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ComboBox FontSize="20px" x:Name="cmbx" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Модель" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtModel" CaretBrush="Gray" Margin="0,10,0,0"/>
             <ui:TextBlock Text="Год" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
