@@ -26,9 +26,9 @@
             <ui:TextBlock Text="Инструктор" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ComboBox Name="cmbx1" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Дата начала" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtStartTime" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:DatePicker Name="datePicker1" HorizontalAlignment="Left" Width="173"/>
             <ui:TextBlock Text="Дата окончания" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtEndTime" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui:DatePicker Name="datePicker2" HorizontalAlignment="Left" Width="173"/>
             <ui:TextBlock Text="Статус" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ui:TextBox FontSize="20px" x:Name="txtStatus" CaretBrush="Gray" Margin="0,10,0,0"/>
             <ui:Button Content="Создать" Width="100" Height="40" Background="White" HorizontalAlignment="Center" Margin="0,20,0,0" Click="Button_Click"/>

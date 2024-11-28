@@ -16,9 +16,6 @@ using DrivingSchool.db;
 
 namespace DrivingSchool.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для AddGrades.xaml
-    /// </summary>
     public partial class AddGrades : Page
     {
         public AddGrades()

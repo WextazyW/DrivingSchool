@@ -34,8 +34,8 @@ namespace DrivingSchool.Pages
         {
             string studentId = cmbx.Text;
             string instructorId = cmbx1.Text;
-            string startDate = txtStartTime.Text;
-            string endDate = txtEndTime.Text;
+            string startDate = datePicker1.Text;
+            string endDate = datePicker2.Text;
             string status = txtStatus.Text;
 
             var schedule = ConnectionDB.db.Schedule.AsEnumerable().FirstOrDefault(s =>

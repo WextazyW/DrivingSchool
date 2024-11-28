@@ -13,10 +13,10 @@ namespace DrivingSchool.db
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DrivingSchoolDBEntities2 : DbContext
+    public partial class DriveDBEntities : DbContext
     {
-        public DrivingSchoolDBEntities2()
-            : base("name=DrivingSchoolDBEntities2")
+        public DriveDBEntities()
+            : base("name=DriveDBEntities")
         {
         }
     

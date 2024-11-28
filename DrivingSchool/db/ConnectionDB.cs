@@ -9,7 +9,7 @@ namespace DrivingSchool.db
 {
     class ConnectionDB : DbContext
     {
-        public static DrivingSchoolDBEntities2 db = new DrivingSchoolDBEntities2();
+        public static DriveDBEntities db = new DriveDBEntities();
         public static users user;
         public static Students students;
         public static Notifications notifications;

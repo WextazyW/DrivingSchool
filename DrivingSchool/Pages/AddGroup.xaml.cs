@@ -34,8 +34,8 @@ namespace DrivingSchool.Pages
         {
             string studentId = cmbx.Text;
             string groupId = cmbx1.Text;
-            string startDate = txtStartTime.Text;
-            string endDate = txtEndTime.Text;
+            string startDate = datePicker1.Text;
+            string endDate = datePicker2.Text;
 
             var groups = ConnectionDB.db.StudentsGroups.AsEnumerable().FirstOrDefault(s =>
                 s.StudentId.ToString() == studentId

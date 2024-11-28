@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:local="clr-namespace:DrivingSchool.Pages" xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" xmlns:ui1="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       mc:Ignorable="d" 
       d:DesignHeight="850" d:DesignWidth="1200"
       Title="AddSchedule2">
@@ -26,9 +26,9 @@
             <ui:TextBlock Text="Инструктор" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
             <ComboBox Name="cmbx1" Grid.Column="1" Grid.RowSpan="2"/>
             <ui:TextBlock Text="Дата начала" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtStartTime" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui1:DatePicker Name="datePicker1" HorizontalAlignment="Left" Width="173"/>
             <ui:TextBlock Text="Дата окончания" FontSize="20px" Foreground="White" Margin="0,10,0,0"/>
-            <ui:TextBox FontSize="20px" x:Name="txtEndTime" CaretBrush="Gray" Margin="0,10,0,0"/>
+            <ui1:DatePicker Name="datePicker2" HorizontalAlignment="Left" Width="173"/>
             <ui:Button Content="Создать" Width="100" Height="40" Background="White" HorizontalAlignment="Center" Margin="0,20,0,0" Click="Button_Click"/>
         </StackPanel>
         <ui:Image Source="/png/regis.png" Grid.Column="1" Grid.ColumnSpan="2" Margin="300,68,72,142" Grid.RowSpan="4"/>

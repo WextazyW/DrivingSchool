@@ -34,7 +34,7 @@ namespace DrivingSchool.Pages
         {
             string studentId = cmbx.Text;
             string amount = txtAmount.Text;
-            string date = txtDate.Text;
+            string date = datePicker1.Text;
             string metod = txtMetod.Text;
             string discount = txtDiscount.Text;
             string category = txtCategory.Text;
