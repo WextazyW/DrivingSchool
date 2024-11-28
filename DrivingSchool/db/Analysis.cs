@@ -12,11 +12,12 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class ResourceUtilization
+    public partial class Analysis
     {
-        public int ResourceID { get; set; }
-        public string ResourceType { get; set; }
-        public string ResourceName { get; set; }
-        public Nullable<int> NumberOfSessions { get; set; }
+        public int AnalysisId { get; set; }
+        public Nullable<int> IdResource { get; set; }
+        public string CountResource { get; set; }
+    
+        public virtual ResourceType ResourceType { get; set; }
     }
 }

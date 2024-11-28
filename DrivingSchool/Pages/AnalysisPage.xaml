@@ -12,20 +12,31 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <ListView x:Name="AnalysisList" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Background="#0E2039" Foreground="White">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding ResourceID}" Width="40" Header="id"/>
                     <GridViewColumn DisplayMemberBinding="{Binding ResourceType}" Width="100" Header="Тип"/>
                     <GridViewColumn DisplayMemberBinding="{Binding ResourceName}" Width="140" Header="Название"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding NumberOfSessions}" Width="120" Header="Количество"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding TotalMinutesScheduled}" Width="140" Header="Время"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding NumberOfSessions}" Width="180" Header="Количество занятий"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation='Horizontal' Margin="67,611,79,163">
-            <ui:Button Content="Экспортировать отчет" Height="43" Margin="100,0,0,0" Click="Button_Click_2"/>
-            <ui:Button Content="Назад" Height="44" Width="100" Margin="500,0,0,0" Click="Button_Click_1"/>
+        <StackPanel Orientation="Horizontal" Height="154" Margin="475,602,294,94">
+            <ComboBox Name="cmbx" HorizontalAlignment="Center" Width="150" Background="White">
+                <ComboBoxItem Content="Тип"/>
+                <ComboBoxItem Content="Название"/>
+                <ComboBoxItem Content="Количество"/>
+            </ComboBox>
+            <ui:Button Content="Редактировать" HorizontalAlignment="Center" Background="White" Height="50" Click="Button_Click_3"/>
+            <ui:TextBox Name="txtBox" Background="White" Margin="30,0,0,0" Height="32" Width="70"/>
         </StackPanel>
+        <StackPanel Orientation='Horizontal' Margin="73,646,73,128">
+            <ui:Button Content="Экспортировать отчет" Background="White" Height="43" Margin="200,0,0,0" Click="Button_Click_2"/>
+            <ui:Button Content="Назад" Background="White" Height="44" Width="100" Margin="500,0,0,0" Click="Button_Click_1"/>
+        </StackPanel>
+        <ui:Button Content="Удалить" Margin="1077,664,0,0" Height="43" Background="White" VerticalAlignment="Top" Click="Button_Click_4"/>
+        <ui:Button Content="Добавить" Background="White"  Margin="96,661,0,0" VerticalAlignment="Top" Height="46" Width="106" Click="Button_Click"/>
     </Grid>
 </Page>

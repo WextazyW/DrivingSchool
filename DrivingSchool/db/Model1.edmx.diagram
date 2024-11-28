@@ -5,46 +5,49 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ab8bc412a93446fc82782cc9e655e2d7" Name="Diagram1">
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Cars" Width="1.5" PointX="5.25" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Courses" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Discounts" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.DrivingCategories" Width="1.5" PointX="6" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Exams" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Feedback" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Grades" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Groups" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Instructors" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.MaintenanceHistory" Width="1.5" PointX="7.5" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Notifications" Width="1.5" PointX="5.25" PointY="18" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Payments" Width="1.5" PointX="8.25" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Reports" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.ResourceUtilization" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Results" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Schedule" Width="1.5" PointX="8.25" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Schedule2C" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Students" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.StudentsGroups" Width="1.5" PointX="11.25" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.sysdiagrams" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Teacher" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.users" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Cars__Instructor__4AB81AF0" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Maintenan__CarID__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Payments_DrivingCategories" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Results__ExamID__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Feedback__Instru__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Feedback__Studen__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Grades__StudentI__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_StudentsGroups_Groups" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Teacher_Groups" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Schedule__Instru__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Notificat__Stude__45F365D3" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Payments__Studen__47DBAE45" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Results__Student__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule_Students" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule2_Students" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule2C_Teacher" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Students_users" ManuallyRouted="false" />
-        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_StudentsGroups_Students" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Analysis" Width="1.5" PointX="11" PointY="4.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Cars" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Courses" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Discounts" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.DrivingCategories" Width="1.5" PointX="6" PointY="29.125" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Exams" Width="1.5" PointX="6" PointY="21.125" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Feedback" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Grades" Width="1.5" PointX="5.25" PointY="34.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Groups" Width="1.5" PointX="3.75" PointY="5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Instructors" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.MaintenanceHistory" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Notifications" Width="1.5" PointX="5.25" PointY="25.375" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Payments" Width="1.5" PointX="8.25" PointY="17.625" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Reports" Width="1.5" PointX="9.75" PointY="1.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.ResourceType" Width="1.5" PointX="8.75" PointY="4.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.ResourceUtilization" Width="1.5" PointX="10.75" PointY="7.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Results" Width="1.5" PointX="8.25" PointY="13.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Schedule" Width="1.5" PointX="5.25" PointY="17.75" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Schedule2C" Width="1.5" PointX="8.25" PointY="9.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Students" Width="1.5" PointX="3" PointY="12.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.StudentsGroups" Width="1.5" PointX="5.25" PointY="13.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.sysdiagrams" Width="1.5" PointX="10.75" PointY="10.5" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.Teacher" Width="1.5" PointX="6" PointY="4.875" />
+        <EntityTypeShape EntityType="DrivingSchoolDBEntities2.users" Width="1.5" PointX="0.75" PointY="14.25" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Analysis_ResourceType" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Cars__Instructor__4AB81AF0" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Maintenan__CarID__4E88ABD4" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Payments_DrivingCategories" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Results__ExamID__52593CB8" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Feedback__Instru__4BAC3F29" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Feedback__Studen__4222D4EF" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Grades__StudentI__440B1D61" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_StudentsGroups_Groups" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Teacher_Groups" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Schedule__Instru__4E88ABD4" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Notificat__Stude__45F365D3" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Payments__Studen__47DBAE45" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK__Results__Student__534D60F1" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule_Students" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule2_Students" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Schedule2C_Teacher" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_Students_users" />
+        <AssociationConnector Association="DrivingSchoolDBEntities2.FK_StudentsGroups_Students" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

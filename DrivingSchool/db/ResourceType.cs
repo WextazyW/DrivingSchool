@@ -12,11 +12,18 @@ namespace DrivingSchool.db
     using System;
     using System.Collections.Generic;
     
-    public partial class ResourceUtilization
+    public partial class ResourceType
     {
-        public int ResourceID { get; set; }
-        public string ResourceType { get; set; }
-        public string ResourceName { get; set; }
-        public Nullable<int> NumberOfSessions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ResourceType()
+        {
+            this.Analysis = new HashSet<Analysis>();
+        }
+    
+        public int ResourceTypeId { get; set; }
+        public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Analysis> Analysis { get; set; }
     }
 }

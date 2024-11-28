@@ -25,6 +25,7 @@ namespace DrivingSchool.db
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Analysis> Analysis { get; set; }
         public virtual DbSet<Cars> Cars { get; set; }
         public virtual DbSet<Courses> Courses { get; set; }
         public virtual DbSet<Discounts> Discounts { get; set; }
@@ -38,6 +39,7 @@ namespace DrivingSchool.db
         public virtual DbSet<Notifications> Notifications { get; set; }
         public virtual DbSet<Payments> Payments { get; set; }
         public virtual DbSet<Reports> Reports { get; set; }
+        public virtual DbSet<ResourceType> ResourceType { get; set; }
         public virtual DbSet<ResourceUtilization> ResourceUtilization { get; set; }
         public virtual DbSet<Results> Results { get; set; }
         public virtual DbSet<Schedule> Schedule { get; set; }

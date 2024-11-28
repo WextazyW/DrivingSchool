@@ -55,7 +55,6 @@ namespace DrivingSchool.Pages
                     worksheet.Cell(i + 2, 2).Value = values.ResourceType;
                     worksheet.Cell(i + 2, 3).Value = values.ResourceName;
                     worksheet.Cell(i + 2, 4).Value = values.NumberOfSessions;
-                    worksheet.Cell(i + 2, 5).Value = values.TotalMinutesScheduled;
                 }
             }
 
@@ -68,6 +67,41 @@ namespace DrivingSchool.Pages
 
             ExportToExcel(AnalysisList, filePath);
             MessageBox.Show("Данные экспортированы");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddAnalysisPage());
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (AnalysisList.SelectedItem != null)
+            {
+                ResourceUtilization student = AnalysisList.SelectedItem as ResourceUtilization;
+                if (cmbx.Text == "Тип")
+                {
+                    student.ResourceType = txtBox.Text;
+                }
+                if (cmbx.Text == "Название")
+                {
+                    student.ResourceName = txtBox.Text;
+                }
+                if (cmbx.Text == "Количество")
+                {
+                    student.NumberOfSessions = Convert.ToInt32(txtBox.Text);
+                }
+                ConnectionDB.db.SaveChanges();
+                AnalysisList.ItemsSource = ConnectionDB.db.ResourceUtilization.ToList();
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            ResourceUtilization kaktusi = AnalysisList.SelectedItem as ResourceUtilization;
+            ConnectionDB.db.ResourceUtilization.Remove(kaktusi);
+            ConnectionDB.db.SaveChanges();
+            AnalysisList.ItemsSource = ConnectionDB.db.ResourceUtilization.ToList();
         }
     }
 }
